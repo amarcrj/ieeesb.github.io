@@ -33,7 +33,7 @@ const Footer = () => {
         <div className="flex flex-col items-center justify-between gap-6 border-t border-white/20 pt-6 md:flex-row">
           <p className="text-center text-[13px] text-white/90 md:text-left">
             © Copyright 2025 IEEE - All rights reserved. A public charity, IEEE
-            is the world's largest technical professional organization dedicated
+            is the world&apos;s largest technical professional organization dedicated
             to advancing technology for the benefit of humanity.
           </p>
           <div className="flex gap-4">
