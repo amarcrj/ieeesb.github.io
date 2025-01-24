@@ -4,6 +4,17 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { Button } from "@/components/ui/button";
 import "@splidejs/react-splide/css";
 
+interface Slide {
+  bgColor: string;
+  title: string;
+  subtitle: string;
+  buttonText: string;
+}
+
+interface ImageCarouselProps {
+  slides: Slide[];
+}
+
 const slides = [
   {
     title: "Submit Your Abstracts Today",
