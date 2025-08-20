@@ -127,7 +127,7 @@ export default function About() {
                   To foster technological innovation and professional excellence among 
                   students at IIIT Naya Raipur. We create a collaborative environment where 
                   future engineers and technologists can develop their skills, explore 
-                  cutting-edge research, and contribute to society's advancement.
+                  cutting-edge research, and contribute to society&apos;s advancement.
                 </p>
                 <p className="text-gray-700 leading-relaxed">
                   Through workshops, competitions, research projects, and industry 
@@ -233,7 +233,7 @@ export default function About() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="mb-6 text-3xl font-bold">Join the IEEE Community</h2>
             <p className="mb-8 mx-auto max-w-2xl text-lg opacity-90">
-              Become part of the world's largest technical professional organization 
+              Become part of the world&apos;s largest technical professional organization 
               and contribute to advancing technology for humanity.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

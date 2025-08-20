@@ -9,14 +9,12 @@ interface Slide {
   title: string;
   subtitle: string;
   buttonText: string;
+  buttonLink: string;
   bgImage?: string;
 }
 
-interface ImageCarouselProps {
-  slides: Slide[];
-}
 
-const slides = [
+const slides: Slide[] = [
   {
     title: "IEEE Student Branch IIITNR",
     subtitle: "Welcome to our Technology Innovation Hub",

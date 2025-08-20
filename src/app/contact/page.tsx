@@ -74,7 +74,7 @@ export default function Contact() {
               Contact Us
             </h1>
             <p className="mx-auto max-w-2xl text-lg opacity-90">
-              Get in touch with our IEEE Student Branch. We're here to help with 
+              Get in touch with our IEEE Student Branch. We&apos;re here to help with 
               membership, events, technical questions, and collaboration opportunities.
             </p>
           </div>
@@ -131,7 +131,7 @@ export default function Contact() {
                 </h2>
                 <p className="mb-8 text-gray-700">
                   Have a question or want to get involved? Fill out the form below 
-                  and we'll get back to you as soon as possible.
+                  and we&apos;ll get back to you as soon as possible.
                 </p>
                 
                 <form onSubmit={handleSubmit} className="space-y-6">

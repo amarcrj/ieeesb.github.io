@@ -3,7 +3,7 @@ declare module "@splidejs/react-splide" {
   import { FC } from "react";
 
   export interface SplideProps {
-    options?: Record<string, any>;
+    options?: Record<string, unknown>;
     className?: string;
   }
 

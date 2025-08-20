@@ -54,6 +54,7 @@ const pastEvents = [
   {
     title: "IEEE Day Celebration 2024",
     date: "2024-10-06",
+    location: "Main Campus",
     image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=400&fit=crop",
     category: "Celebration",
     attendees: "300",
@@ -62,6 +63,7 @@ const pastEvents = [
   {
     title: "Embedded Systems Workshop",
     date: "2024-11-12",
+    location: "Electronics Lab",
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop",
     category: "Workshop",
     attendees: "60",
@@ -70,6 +72,7 @@ const pastEvents = [
   {
     title: "Women in Engineering Symposium",
     date: "2024-09-20",
+    location: "Conference Hall",
     image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=600&h=400&fit=crop",
     category: "Symposium",
     attendees: "150",
@@ -77,7 +80,19 @@ const pastEvents = [
   }
 ];
 
-const EventCard = ({ event, isPast = false }: { event: any; isPast?: boolean }) => (
+interface Event {
+  title: string;
+  date: string;
+  time?: string;
+  location: string;
+  image: string;
+  category: string;
+  attendees: string;
+  description: string;
+  featured?: boolean;
+}
+
+const EventCard = ({ event, isPast = false }: { event: Event; isPast?: boolean }) => (
   <Card className={`group overflow-hidden transition-all duration-300 hover:shadow-xl ${event.featured && !isPast ? 'ring-2 ring-[#00629B] ring-opacity-50' : ''}`}>
     <CardContent className="p-0">
       <div className="relative">
@@ -190,7 +205,7 @@ export default function Events() {
                 Upcoming Events
               </h2>
               <p className="mx-auto max-w-2xl text-gray-700">
-                Don't miss out on these exciting opportunities to learn, compete, and network 
+                Don&apos;t miss out on these exciting opportunities to learn, compete, and network 
                 with fellow technology enthusiasts.
               </p>
             </div>
@@ -289,7 +304,7 @@ export default function Events() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="mb-6 text-3xl font-bold">Stay Updated</h2>
             <p className="mb-8 mx-auto max-w-2xl text-lg opacity-90">
-              Don't miss any of our exciting events! Subscribe to our newsletter 
+              Don&apos;t miss any of our exciting events! Subscribe to our newsletter 
               or follow us on social media for the latest updates.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

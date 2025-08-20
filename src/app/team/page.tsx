@@ -2,7 +2,7 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, Linkedin, Github, ExternalLink } from "lucide-react";
+import { Mail, Linkedin, Github } from "lucide-react";
 
 const teamMembers = {
   executive: [
@@ -112,7 +112,19 @@ const teamMembers = {
   ]
 };
 
-const TeamMemberCard = ({ member }: { member: any }) => (
+interface TeamMember {
+  name: string;
+  position: string;
+  year: string;
+  major: string;
+  image: string;
+  bio: string;
+  email: string;
+  linkedin: string;
+  github: string;
+}
+
+const TeamMemberCard = ({ member }: { member: TeamMember }) => (
   <Card className="group overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
     <CardContent className="p-0">
       <div className="relative">
@@ -180,7 +192,7 @@ export default function Team() {
             </h1>
             <p className="mx-auto max-w-2xl text-lg opacity-90">
               Our diverse team of passionate engineers and technology enthusiasts 
-              working together to advance IEEE's mission on campus.
+              working together to advance IEEE&apos;s mission on campus.
             </p>
           </div>
         </section>
@@ -252,9 +264,9 @@ export default function Team() {
               Want to Join Our Team?
             </h2>
             <p className="mb-8 mx-auto max-w-2xl text-gray-700">
-              We're always looking for passionate students to join our IEEE Student Branch. 
-              Whether you're interested in technical roles, event organization, or community outreach, 
-              there's a place for you in our team.
+              We&apos;re always looking for passionate students to join our IEEE Student Branch. 
+              Whether you&apos;re interested in technical roles, event organization, or community outreach, 
+              there&apos;s a place for you in our team.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-[#00629B] text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">

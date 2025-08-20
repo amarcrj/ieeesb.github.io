@@ -3,7 +3,7 @@ import Footer from "@/components/footer";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Linkedin, ExternalLink, Building, MapPin, Users, Award, Calendar, Mail } from "lucide-react";
+import { Linkedin, ExternalLink, Building, MapPin, Users, Award, Mail } from "lucide-react";
 
 const featuredAlumni = [
   {
@@ -76,7 +76,20 @@ const companies = [
   { name: "Meta", logo: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg", count: 7 }
 ];
 
-const AlumniCard = ({ alumni }: { alumni: any }) => (
+interface Alumni {
+  name: string;
+  graduation: string;
+  position: string;
+  company: string;
+  location: string;
+  image: string;
+  bio: string;
+  achievements: string[];
+  linkedin: string;
+  featured?: boolean;
+}
+
+const AlumniCard = ({ alumni }: { alumni: Alumni }) => (
   <Card className={`group overflow-hidden transition-all duration-300 hover:shadow-xl ${alumni.featured ? 'ring-2 ring-[#00629B] ring-opacity-50' : ''}`}>
     <CardContent className="p-0">
       <div className="relative">
