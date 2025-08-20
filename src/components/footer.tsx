@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 
 const footerLinks = [
@@ -16,6 +17,22 @@ const Footer = () => {
   return (
     <footer className="mt-auto bg-[#00629B] py-8 text-white">
       <div className="container mx-auto px-4">
+        {/* Logo and Branch Info */}
+        <div className="mb-8 text-center">
+          <div className="flex justify-center items-center space-x-4 mb-4">
+            <Image
+              src="/1000119891.png"
+              alt="IEEE Student Branch IIITNR"
+              width={200}
+              height={50}
+              className="h-12 w-auto"
+            />
+          </div>
+          <p className="text-sm text-white/90">
+            IEEE Student Branch - International Institute of Information Technology, Naya Raipur
+          </p>
+        </div>
+
         {/* Footer Links */}
         <nav className="mb-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-center">
           {footerLinks.map((link) => (
@@ -32,9 +49,9 @@ const Footer = () => {
         {/* Social Icons and Footer Text */}
         <div className="flex flex-col items-center justify-between gap-6 border-t border-white/20 pt-6 md:flex-row">
           <p className="text-center text-[13px] text-white/90 md:text-left">
-            © Copyright 2025 IEEE - All rights reserved. A public charity, IEEE
-            is the world&apos;s largest technical professional organization dedicated
-            to advancing technology for the benefit of humanity.
+            © Copyright 2025 IEEE Student Branch IIITNR - All rights reserved. 
+            Part of IEEE, the world&apos;s largest technical professional organization 
+            dedicated to advancing technology for the benefit of humanity.
           </p>
           <div className="flex gap-4">
             {[Twitter, Facebook, Linkedin, Instagram].map((Icon, i) => (

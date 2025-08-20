@@ -18,10 +18,10 @@ interface ImageCarouselProps {
 
 const slides = [
   {
-    title: "IEEE RTSI 2025",
-    subtitle: "Real-time Computing and Robotics Conference",
+    title: "IEEE Student Branch IIITNR",
+    subtitle: "Welcome to our Technology Innovation Hub",
     bgColor: "from-blue-900 to-indigo-600",
-    buttonText: "REGISTER NOW",
+    buttonText: "JOIN US",
     buttonLink: "#",
     bgImage: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1920&h=1080&fit=crop"
   },
