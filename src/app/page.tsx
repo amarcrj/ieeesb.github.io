@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col" >
       <Header />
-      <main>
+      <main className="pt-[104px]"> {/* Height of header: 40px (top bar) + 80px (main header) - 16px overlap */}
         {componentsToShow.map(([name, Component]) => (
           <Component key={name} />
         ))}

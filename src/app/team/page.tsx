@@ -183,7 +183,7 @@ export default function Team() {
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
-      <main>
+      <main className="pt-[104px]">
         {/* Hero Section */}
         <section className="bg-gradient-to-r from-[#00629B] to-blue-700 py-8 sm:py-12 lg:py-16 text-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
