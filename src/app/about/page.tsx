@@ -60,31 +60,31 @@ export default function About() {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-[#00629B] to-blue-700 py-16 text-white">
-          <div className="container mx-auto px-4">
-            <div className="grid gap-8 lg:grid-cols-2 items-center">
-              <div>
-                <h1 className="mb-6 text-4xl font-bold lg:text-5xl">
+        <section className="bg-gradient-to-r from-[#00629B] to-blue-700 py-8 sm:py-12 lg:py-16 text-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-6 sm:gap-8 lg:grid-cols-2 items-center">
+              <div className="text-center lg:text-left">
+                <h1 className="mb-4 sm:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
                   About IEEE Student Branch IIITNR
                 </h1>
-                <p className="mb-6 text-lg leading-relaxed opacity-90">
+                <p className="mb-4 sm:mb-6 text-sm sm:text-base lg:text-lg leading-relaxed opacity-90">
                   IEEE Student Branch at International Institute of Information Technology, Naya Raipur 
                   is a dynamic community of technology enthusiasts, fostering innovation and 
                   professional development among students in electrical engineering, computer 
                   science, and related fields.
                 </p>
-                <div className="flex items-center space-x-4">
-                  <div className="h-1 w-16 bg-white"></div>
-                  <p className="text-xl font-semibold">Advancing Technology for Humanity</p>
+                <div className="flex items-center justify-center lg:justify-start space-x-4">
+                  <div className="h-1 w-12 sm:w-16 bg-white"></div>
+                  <p className="text-base sm:text-lg lg:text-xl font-semibold">Advancing Technology for Humanity</p>
                 </div>
               </div>
-              <div className="relative">
+              <div className="relative order-first lg:order-last">
                 <Image
                   src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop"
                   alt="IEEE Technology"
                   width={600}
                   height={400}
-                  className="rounded-lg shadow-2xl"
+                  className="rounded-lg shadow-2xl w-full h-auto max-w-md mx-auto lg:max-w-none"
                 />
               </div>
             </div>
@@ -92,9 +92,9 @@ export default function About() {
         </section>
 
         {/* Stats Section */}
-        <section className="py-12 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <section className="py-8 sm:py-12 bg-gray-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
               {stats.map((stat, index) => {
                 const Icon = stat.icon;
                 return (
@@ -118,9 +118,9 @@ export default function About() {
         </section>
 
         {/* Mission & Vision */}
-        <section className="py-16 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="grid gap-12 lg:grid-cols-2">
+        <section className="py-8 sm:py-12 lg:py-16 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-8 sm:gap-12 lg:grid-cols-2">
               <div>
                 <h2 className="mb-6 text-3xl font-bold text-[#00629B]">Our Mission</h2>
                 <p className="mb-4 text-lg text-gray-700 leading-relaxed">
@@ -154,16 +154,16 @@ export default function About() {
         </section>
 
         {/* Core Values */}
-        <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
-          <div className="container mx-auto px-4">
-            <div className="mb-12 text-center">
-              <h2 className="mb-4 text-3xl font-bold text-[#00629B]">Our Core Values</h2>
-              <p className="mx-auto max-w-2xl text-gray-700">
+        <section className="py-8 sm:py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mb-8 sm:mb-12 text-center">
+              <h2 className="mb-4 text-2xl sm:text-3xl font-bold text-[#00629B]">Our Core Values</h2>
+              <p className="mx-auto max-w-2xl text-sm sm:text-base text-gray-700 px-4 sm:px-0">
                 These fundamental principles guide our organization and shape our approach 
                 to technological advancement and professional development.
               </p>
             </div>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
               {values.map((value, index) => {
                 const Icon = value.icon;
                 return (
@@ -189,9 +189,9 @@ export default function About() {
         </section>
 
         {/* History Section */}
-        <section className="py-16 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="grid gap-8 lg:grid-cols-2 items-center">
+        <section className="py-8 sm:py-12 lg:py-16 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-6 sm:gap-8 lg:grid-cols-2 items-center">
               <div className="order-2 lg:order-1">
                 <Image
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop"
@@ -229,8 +229,8 @@ export default function About() {
         </section>
 
         {/* Call to Action */}
-        <section className="py-16 bg-[#00629B] text-white">
-          <div className="container mx-auto px-4 text-center">
+        <section className="py-8 sm:py-12 lg:py-16 bg-[#00629B] text-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="mb-6 text-3xl font-bold">Join the IEEE Community</h2>
             <p className="mb-8 mx-auto max-w-2xl text-lg opacity-90">
               Become part of the world&apos;s largest technical professional organization 

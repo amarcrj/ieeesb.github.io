@@ -185,12 +185,12 @@ export default function Events() {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-[#00629B] to-blue-700 py-16 text-white">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="mb-6 text-4xl font-bold lg:text-5xl">
+        <section className="bg-gradient-to-r from-[#00629B] to-blue-700 py-8 sm:py-12 lg:py-16 text-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 className="mb-4 sm:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
               IEEE Events
             </h1>
-            <p className="mx-auto max-w-2xl text-lg opacity-90">
+            <p className="mx-auto max-w-2xl text-sm sm:text-base lg:text-lg opacity-90 px-4 sm:px-0">
               Join our exciting lineup of workshops, competitions, lectures, and networking 
               events designed to advance your technical skills and professional growth.
             </p>
@@ -198,19 +198,19 @@ export default function Events() {
         </section>
 
         {/* Upcoming Events */}
-        <section className="py-16 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="mb-12 text-center">
-              <h2 className="mb-4 text-3xl font-bold text-[#00629B]">
+        <section className="py-8 sm:py-12 lg:py-16 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mb-8 sm:mb-12 text-center">
+              <h2 className="mb-4 text-2xl sm:text-3xl font-bold text-[#00629B]">
                 Upcoming Events
               </h2>
-              <p className="mx-auto max-w-2xl text-gray-700">
+              <p className="mx-auto max-w-2xl text-sm sm:text-base text-gray-700 px-4 sm:px-0">
                 Don&apos;t miss out on these exciting opportunities to learn, compete, and network 
                 with fellow technology enthusiasts.
               </p>
             </div>
             
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
+            <div className="grid gap-6 sm:gap-8 grid-cols-1 md:grid-cols-2">
               {upcomingEvents.map((event, index) => (
                 <EventCard key={index} event={event} />
               ))}
@@ -219,15 +219,15 @@ export default function Events() {
         </section>
 
         {/* Event Categories */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <div className="mb-12 text-center">
-              <h2 className="mb-4 text-3xl font-bold text-[#00629B]">
+        <section className="py-8 sm:py-12 lg:py-16 bg-gray-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mb-8 sm:mb-12 text-center">
+              <h2 className="mb-4 text-2xl sm:text-3xl font-bold text-[#00629B]">
                 Event Categories
               </h2>
             </div>
             
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
               <Card className="text-center group hover:shadow-lg transition-all">
                 <CardContent className="p-6">
                   <div className="mb-4 flex justify-center">
@@ -280,18 +280,18 @@ export default function Events() {
         </section>
 
         {/* Past Events */}
-        <section className="py-16 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="mb-12 text-center">
-              <h2 className="mb-4 text-3xl font-bold text-[#00629B]">
+        <section className="py-8 sm:py-12 lg:py-16 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mb-8 sm:mb-12 text-center">
+              <h2 className="mb-4 text-2xl sm:text-3xl font-bold text-[#00629B]">
                 Past Events
               </h2>
-              <p className="mx-auto max-w-2xl text-gray-700">
+              <p className="mx-auto max-w-2xl text-sm sm:text-base text-gray-700 px-4 sm:px-0">
                 Look back at our recent successful events and see what you might have missed.
               </p>
             </div>
             
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-6 sm:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               {pastEvents.map((event, index) => (
                 <EventCard key={index} event={event} isPast={true} />
               ))}
@@ -300,8 +300,8 @@ export default function Events() {
         </section>
 
         {/* Call to Action */}
-        <section className="py-16 bg-[#00629B] text-white">
-          <div className="container mx-auto px-4 text-center">
+        <section className="py-8 sm:py-12 lg:py-16 bg-[#00629B] text-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="mb-6 text-3xl font-bold">Stay Updated</h2>
             <p className="mb-8 mx-auto max-w-2xl text-lg opacity-90">
               Don&apos;t miss any of our exciting events! Subscribe to our newsletter 

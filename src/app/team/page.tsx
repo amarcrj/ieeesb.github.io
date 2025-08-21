@@ -185,12 +185,12 @@ export default function Team() {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-[#00629B] to-blue-700 py-16 text-white">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="mb-6 text-4xl font-bold lg:text-5xl">
+        <section className="bg-gradient-to-r from-[#00629B] to-blue-700 py-8 sm:py-12 lg:py-16 text-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 className="mb-4 sm:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
               Meet Our Team
             </h1>
-            <p className="mx-auto max-w-2xl text-lg opacity-90">
+            <p className="mx-auto max-w-2xl text-sm sm:text-base lg:text-lg opacity-90 px-4 sm:px-0">
               Our diverse team of passionate engineers and technology enthusiasts 
               working together to advance IEEE&apos;s mission on campus.
             </p>
@@ -198,18 +198,18 @@ export default function Team() {
         </section>
 
         {/* Executive Board */}
-        <section className="py-16 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="mb-12 text-center">
-              <h2 className="mb-4 text-3xl font-bold text-[#00629B]">
+        <section className="py-8 sm:py-12 lg:py-16 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mb-8 sm:mb-12 text-center">
+              <h2 className="mb-4 text-2xl sm:text-3xl font-bold text-[#00629B]">
                 Executive Board
               </h2>
-              <p className="mx-auto max-w-2xl text-gray-700">
+              <p className="mx-auto max-w-2xl text-sm sm:text-base text-gray-700 px-4 sm:px-0">
                 Leading our student branch with vision, dedication, and technical expertise.
               </p>
             </div>
             
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
               {teamMembers.executive.map((member, index) => (
                 <TeamMemberCard key={index} member={member} />
               ))}
@@ -218,18 +218,18 @@ export default function Team() {
         </section>
 
         {/* Technical Team */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <div className="mb-12 text-center">
-              <h2 className="mb-4 text-3xl font-bold text-[#00629B]">
+        <section className="py-8 sm:py-12 lg:py-16 bg-gray-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mb-8 sm:mb-12 text-center">
+              <h2 className="mb-4 text-2xl sm:text-3xl font-bold text-[#00629B]">
                 Technical Team
               </h2>
-              <p className="mx-auto max-w-2xl text-gray-700">
+              <p className="mx-auto max-w-2xl text-sm sm:text-base text-gray-700 px-4 sm:px-0">
                 Our technical specialists driving innovation in AI, robotics, and embedded systems.
               </p>
             </div>
             
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
               {teamMembers.technical.map((member, index) => (
                 <TeamMemberCard key={index} member={member} />
               ))}
@@ -238,18 +238,18 @@ export default function Team() {
         </section>
 
         {/* Outreach Team */}
-        <section className="py-16 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="mb-12 text-center">
-              <h2 className="mb-4 text-3xl font-bold text-[#00629B]">
+        <section className="py-8 sm:py-12 lg:py-16 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mb-8 sm:mb-12 text-center">
+              <h2 className="mb-4 text-2xl sm:text-3xl font-bold text-[#00629B]">
                 Outreach & Relations
               </h2>
-              <p className="mx-auto max-w-2xl text-gray-700">
+              <p className="mx-auto max-w-2xl text-sm sm:text-base text-gray-700 px-4 sm:px-0">
                 Building bridges with the community and fostering industry partnerships.
               </p>
             </div>
             
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2 max-w-4xl mx-auto">
+            <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 max-w-4xl mx-auto">
               {teamMembers.outreach.map((member, index) => (
                 <TeamMemberCard key={index} member={member} />
               ))}
@@ -258,8 +258,8 @@ export default function Team() {
         </section>
 
         {/* Join Us Section */}
-        <section className="py-16 bg-gradient-to-r from-blue-50 to-indigo-50">
-          <div className="container mx-auto px-4 text-center">
+        <section className="py-8 sm:py-12 lg:py-16 bg-gradient-to-r from-blue-50 to-indigo-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="mb-6 text-3xl font-bold text-[#00629B]">
               Want to Join Our Team?
             </h2>

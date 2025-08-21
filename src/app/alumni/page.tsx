@@ -168,16 +168,16 @@ export default function Alumni() {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-[#00629B] to-blue-700 py-16 text-white">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="mb-6 text-4xl font-bold lg:text-5xl">
+        <section className="bg-gradient-to-r from-[#00629B] to-blue-700 py-8 sm:py-12 lg:py-16 text-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 className="mb-4 sm:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
               IEEE Alumni Network
             </h1>
-            <p className="mx-auto max-w-2xl text-lg opacity-90">
+            <p className="mx-auto max-w-2xl text-sm sm:text-base lg:text-lg opacity-90 px-4 sm:px-0">
               Our graduates are making significant impacts across the technology industry, 
               from leading research at top companies to founding innovative startups.
             </p>
-            <div className="mt-8 grid gap-6 md:grid-cols-3 max-w-2xl mx-auto">
+            <div className="mt-6 sm:mt-8 grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-3 max-w-2xl mx-auto">
               <div className="text-center">
                 <h3 className="text-3xl font-bold">500+</h3>
                 <p className="text-sm opacity-90">Alumni Worldwide</p>

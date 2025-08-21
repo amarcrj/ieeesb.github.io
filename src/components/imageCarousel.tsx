@@ -67,7 +67,7 @@ const ImageCarousel = () => {
         {slides.map((slide, index) => (
           <SplideSlide key={index}>
             <div
-              className={`relative h-[500px] w-full bg-gradient-to-r ${slide.bgColor}`}
+              className={`relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] w-full bg-gradient-to-r ${slide.bgColor}`}
             >
               {slide.bgImage && (
                 <div
@@ -81,20 +81,20 @@ const ImageCarousel = () => {
                 />
               )}
               <div className="absolute inset-0 bg-black/50" />
-              <div className="container relative flex h-full flex-col items-center justify-center text-center text-white">
+              <div className="container relative flex h-full flex-col items-center justify-center text-center text-white px-4">
                 {/* Title */}
-                <h2 className="mb-4 text-5xl font-extrabold tracking-wide leading-tight md:text-6xl lg:text-7xl drop-shadow-lg">
+                <h2 className="mb-3 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-wide leading-tight drop-shadow-lg">
                   {slide.title}
                 </h2>
                 {/* Subtitle */}
-                <p className="mb-8 text-2xl font-light tracking-wide leading-relaxed md:text-3xl lg:text-4xl drop-shadow-md">
+                <p className="mb-6 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-light tracking-wide leading-relaxed drop-shadow-md max-w-4xl">
                   {slide.subtitle}
                 </p>
                 {/* Button */}
                 <Button
                   size="lg"
                   variant="secondary"
-                  className="rounded-full bg-white px-8 text-[#00629B] hover:bg-blue-50"
+                  className="rounded-full bg-white px-6 sm:px-8 text-sm sm:text-base text-[#00629B] hover:bg-blue-50 shadow-lg"
                 >
                   {slide.buttonText}
                 </Button>

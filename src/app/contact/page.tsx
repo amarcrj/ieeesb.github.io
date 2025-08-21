@@ -68,12 +68,12 @@ export default function Contact() {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-[#00629B] to-blue-700 py-16 text-white">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="mb-6 text-4xl font-bold lg:text-5xl">
+        <section className="bg-gradient-to-r from-[#00629B] to-blue-700 py-8 sm:py-12 lg:py-16 text-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 className="mb-4 sm:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
               Contact Us
             </h1>
-            <p className="mx-auto max-w-2xl text-lg opacity-90">
+            <p className="mx-auto max-w-2xl text-sm sm:text-base lg:text-lg opacity-90 px-4 sm:px-0">
               Get in touch with our IEEE Student Branch. We&apos;re here to help with 
               membership, events, technical questions, and collaboration opportunities.
             </p>
@@ -81,18 +81,18 @@ export default function Contact() {
         </section>
 
         {/* Contact Information */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <div className="mb-12 text-center">
-              <h2 className="mb-4 text-3xl font-bold text-[#00629B]">
+        <section className="py-8 sm:py-12 lg:py-16 bg-gray-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mb-8 sm:mb-12 text-center">
+              <h2 className="mb-4 text-2xl sm:text-3xl font-bold text-[#00629B]">
                 Get In Touch
               </h2>
-              <p className="mx-auto max-w-2xl text-gray-700">
+              <p className="mx-auto max-w-2xl text-sm sm:text-base text-gray-700 px-4 sm:px-0">
                 Multiple ways to reach our team for different types of inquiries.
               </p>
             </div>
             
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
               {contactInfo.map((info, index) => {
                 const Icon = info.icon;
                 return (
@@ -121,12 +121,12 @@ export default function Contact() {
         </section>
 
         {/* Contact Form & Map */}
-        <section className="py-16 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="grid gap-12 lg:grid-cols-2">
+        <section className="py-8 sm:py-12 lg:py-16 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-8 sm:gap-12 lg:grid-cols-2">
               {/* Contact Form */}
               <div>
-                <h2 className="mb-6 text-3xl font-bold text-[#00629B]">
+                <h2 className="mb-4 sm:mb-6 text-2xl sm:text-3xl font-bold text-[#00629B]">
                   Send Us a Message
                 </h2>
                 <p className="mb-8 text-gray-700">
@@ -217,7 +217,7 @@ export default function Contact() {
 
               {/* Map & Additional Info */}
               <div>
-                <h2 className="mb-6 text-3xl font-bold text-[#00629B]">
+                <h2 className="mb-4 sm:mb-6 text-2xl sm:text-3xl font-bold text-[#00629B]">
                   Find Us
                 </h2>
                 
@@ -281,10 +281,10 @@ export default function Contact() {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <div className="mb-12 text-center">
-              <h2 className="mb-4 text-3xl font-bold text-[#00629B]">
+        <section className="py-8 sm:py-12 lg:py-16 bg-gray-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mb-8 sm:mb-12 text-center">
+              <h2 className="mb-4 text-2xl sm:text-3xl font-bold text-[#00629B]">
                 Frequently Asked Questions
               </h2>
             </div>
