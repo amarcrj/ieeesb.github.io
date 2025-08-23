@@ -64,11 +64,11 @@ export default function Contact() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col bg-white dark:bg-gray-900">
       <Header />
       <main className="pt-[104px]">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-[#00629B] to-blue-700 py-8 sm:py-12 lg:py-16 text-white">
+        <section className="bg-gradient-to-r from-[#00629B] to-blue-700 dark:from-gray-800 dark:to-gray-900 py-8 sm:py-12 lg:py-16 text-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="mb-4 sm:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
               Contact Us
@@ -81,13 +81,13 @@ export default function Contact() {
         </section>
 
         {/* Contact Information */}
-        <section className="py-8 sm:py-12 lg:py-16 bg-gray-50">
+        <section className="py-8 sm:py-12 lg:py-16 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-8 sm:mb-12 text-center">
-              <h2 className="mb-4 text-2xl sm:text-3xl font-bold text-[#00629B]">
+              <h2 className="mb-4 text-2xl sm:text-3xl font-bold text-[#00629B] dark:text-blue-400">
                 Get In Touch
               </h2>
-              <p className="mx-auto max-w-2xl text-sm sm:text-base text-gray-700 px-4 sm:px-0">
+              <p className="mx-auto max-w-2xl text-sm sm:text-base text-gray-700 dark:text-gray-300 px-4 sm:px-0">
                 Multiple ways to reach our team for different types of inquiries.
               </p>
             </div>
@@ -96,20 +96,20 @@ export default function Contact() {
               {contactInfo.map((info, index) => {
                 const Icon = info.icon;
                 return (
-                  <Card key={index} className="group text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                  <Card key={index} className="group text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1 bg-white dark:bg-gray-700 border dark:border-gray-600">
                     <CardContent className="p-6">
                       <div className="mb-4 flex justify-center">
-                        <div className="rounded-full bg-[#00629B] p-3 group-hover:bg-blue-700 transition-colors">
+                        <div className="rounded-full bg-[#00629B] dark:bg-blue-600 p-3 group-hover:bg-blue-700 dark:group-hover:bg-blue-500 transition-colors">
                           <Icon className="h-6 w-6 text-white" />
                         </div>
                       </div>
-                      <h3 className="mb-2 text-lg font-semibold text-gray-800">
+                      <h3 className="mb-2 text-lg font-semibold text-gray-800 dark:text-white">
                         {info.title}
                       </h3>
-                      <p className="mb-2 text-[#00629B] font-medium whitespace-pre-line">
+                      <p className="mb-2 text-[#00629B] dark:text-blue-400 font-medium whitespace-pre-line">
                         {info.details}
                       </p>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-gray-600 dark:text-gray-300">
                         {info.subtitle}
                       </p>
                     </CardContent>
@@ -121,15 +121,15 @@ export default function Contact() {
         </section>
 
         {/* Contact Form & Map */}
-        <section className="py-8 sm:py-12 lg:py-16 bg-white">
+        <section className="py-8 sm:py-12 lg:py-16 bg-white dark:bg-gray-900">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid gap-8 sm:gap-12 lg:grid-cols-2">
               {/* Contact Form */}
               <div>
-                <h2 className="mb-4 sm:mb-6 text-2xl sm:text-3xl font-bold text-[#00629B]">
+                <h2 className="mb-4 sm:mb-6 text-2xl sm:text-3xl font-bold text-[#00629B] dark:text-blue-400">
                   Send Us a Message
                 </h2>
-                <p className="mb-8 text-gray-700">
+                <p className="mb-8 text-gray-700 dark:text-gray-300">
                   Have a question or want to get involved? Fill out the form below 
                   and we&apos;ll get back to you as soon as possible.
                 </p>
@@ -137,7 +137,7 @@ export default function Contact() {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid gap-6 md:grid-cols-2">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Full Name *
                       </label>
                       <input
@@ -147,12 +147,12 @@ export default function Contact() {
                         required
                         value={formData.name}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00629B] focus:border-transparent outline-none transition-colors"
+                        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-[#00629B] focus:border-transparent outline-none transition-colors"
                         placeholder="Your full name"
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Email Address *
                       </label>
                       <input
@@ -162,14 +162,14 @@ export default function Contact() {
                         required
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00629B] focus:border-transparent outline-none transition-colors"
+                        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-[#00629B] focus:border-transparent outline-none transition-colors"
                         placeholder="your.email@example.com"
                       />
                     </div>
                   </div>
                   
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Subject *
                     </label>
                     <select
@@ -178,7 +178,7 @@ export default function Contact() {
                       required
                       value={formData.subject}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00629B] focus:border-transparent outline-none transition-colors"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-[#00629B] focus:border-transparent outline-none transition-colors"
                     >
                       <option value="">Select a subject</option>
                       <option value="membership">Membership Inquiry</option>
@@ -190,7 +190,7 @@ export default function Contact() {
                   </div>
                   
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Message *
                     </label>
                     <textarea
@@ -200,14 +200,14 @@ export default function Contact() {
                       rows={6}
                       value={formData.message}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00629B] focus:border-transparent outline-none transition-colors resize-vertical"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-[#00629B] focus:border-transparent outline-none transition-colors resize-vertical"
                       placeholder="Tell us more about your inquiry..."
                     />
                   </div>
                   
                   <Button 
                     type="submit"
-                    className="w-full bg-[#00629B] hover:bg-blue-700 text-white py-3 flex items-center justify-center space-x-2"
+                    className="w-full bg-[#00629B] dark:bg-blue-600 hover:bg-blue-700 dark:hover:bg-blue-500 text-white py-3 flex items-center justify-center space-x-2"
                   >
                     <Send className="h-4 w-4" />
                     <span>Send Message</span>
@@ -217,25 +217,25 @@ export default function Contact() {
 
               {/* Map & Additional Info */}
               <div>
-                <h2 className="mb-4 sm:mb-6 text-2xl sm:text-3xl font-bold text-[#00629B]">
+                <h2 className="mb-4 sm:mb-6 text-2xl sm:text-3xl font-bold text-[#00629B] dark:text-blue-400">
                   Find Us
                 </h2>
                 
                 {/* Placeholder Map */}
-                <div className="mb-8 h-64 rounded-lg bg-gray-200 flex items-center justify-center">
-                  <div className="text-center text-gray-500">
+                <div className="mb-8 h-64 rounded-lg bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                  <div className="text-center text-gray-500 dark:text-gray-400">
                     <MapPin className="h-12 w-12 mx-auto mb-2" />
                     <p>Interactive Map</p>
                     <p className="text-sm">University Campus Location</p>
                   </div>
                 </div>
                 
-                <Card className="mb-8">
+                <Card className="mb-8 bg-white dark:bg-gray-700 border dark:border-gray-600">
                   <CardContent className="p-6">
-                    <h3 className="mb-4 text-lg font-semibold text-gray-800">
+                    <h3 className="mb-4 text-lg font-semibold text-gray-800 dark:text-white">
                       Visit Our Office
                     </h3>
-                    <div className="space-y-3 text-gray-700">
+                    <div className="space-y-3 text-gray-700 dark:text-gray-300">
                       <p><strong>Address:</strong><br />
                       Engineering Building, Room 201<br />
                       University Campus<br />
@@ -251,12 +251,12 @@ export default function Contact() {
                 </Card>
                 
                 {/* Social Media */}
-                <Card>
+                <Card className="bg-white dark:bg-gray-700 border dark:border-gray-600">
                   <CardContent className="p-6">
-                    <h3 className="mb-4 text-lg font-semibold text-gray-800">
+                    <h3 className="mb-4 text-lg font-semibold text-gray-800 dark:text-white">
                       Follow Us
                     </h3>
-                    <p className="mb-4 text-gray-700 text-sm">
+                    <p className="mb-4 text-gray-700 dark:text-gray-300 text-sm">
                       Stay connected with our latest updates and events
                     </p>
                     <div className="flex space-x-4">
@@ -266,7 +266,7 @@ export default function Contact() {
                           <a
                             key={index}
                             href={social.href}
-                            className={`flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 text-gray-600 transition-colors ${social.color}`}
+                            className={`flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-600 text-gray-600 dark:text-gray-300 transition-colors ${social.color}`}
                           >
                             <Icon className="h-5 w-5" />
                           </a>
@@ -281,45 +281,45 @@ export default function Contact() {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-8 sm:py-12 lg:py-16 bg-gray-50">
+        <section className="py-8 sm:py-12 lg:py-16 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-8 sm:mb-12 text-center">
-              <h2 className="mb-4 text-2xl sm:text-3xl font-bold text-[#00629B]">
+              <h2 className="mb-4 text-2xl sm:text-3xl font-bold text-[#00629B] dark:text-blue-400">
                 Frequently Asked Questions
               </h2>
             </div>
             
             <div className="mx-auto max-w-3xl space-y-6">
-              <Card>
+              <Card className="bg-white dark:bg-gray-700 border dark:border-gray-600">
                 <CardContent className="p-6">
-                  <h3 className="mb-2 text-lg font-semibold text-gray-800">
+                  <h3 className="mb-2 text-lg font-semibold text-gray-800 dark:text-white">
                     How can I become a member?
                   </h3>
-                  <p className="text-gray-700">
+                  <p className="text-gray-700 dark:text-gray-300">
                     Visit our membership page or contact us directly. We welcome all students 
                     interested in electrical engineering, computer science, and related fields.
                   </p>
                 </CardContent>
               </Card>
               
-              <Card>
+              <Card className="bg-white dark:bg-gray-700 border dark:border-gray-600">
                 <CardContent className="p-6">
-                  <h3 className="mb-2 text-lg font-semibold text-gray-800">
+                  <h3 className="mb-2 text-lg font-semibold text-gray-800 dark:text-white">
                     What events do you organize?
                   </h3>
-                  <p className="text-gray-700">
+                  <p className="text-gray-700 dark:text-gray-300">
                     We organize technical workshops, guest lectures, competitions, networking events, 
                     and community outreach programs throughout the academic year.
                   </p>
                 </CardContent>
               </Card>
               
-              <Card>
+              <Card className="bg-white dark:bg-gray-700 border dark:border-gray-600">
                 <CardContent className="p-6">
-                  <h3 className="mb-2 text-lg font-semibold text-gray-800">
+                  <h3 className="mb-2 text-lg font-semibold text-gray-800 dark:text-white">
                     How can I get involved in projects?
                   </h3>
-                  <p className="text-gray-700">
+                  <p className="text-gray-700 dark:text-gray-300">
                     We have ongoing research and development projects in areas like robotics, 
                     AI, and embedded systems. Contact our technical team to learn about current opportunities.
                   </p>

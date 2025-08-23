@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import { useScrollDirection } from "@/hooks/useScrollDirection";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -79,7 +80,7 @@ const Header = () => {
       
       <header 
         ref={headerRef}
-        className={`fixed top-0 left-0 right-0 z-50 w-full border-b bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300 ease-in-out ${
+        className={`fixed top-0 left-0 right-0 z-50 w-full border-b bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-sm dark:shadow-gray-800/20 transition-all duration-300 ease-in-out ${
           isHeaderVisible ? 'translate-y-0' : '-translate-y-full'
         }`}
       >
@@ -136,13 +137,14 @@ const Header = () => {
         </Link>
         
         <div className="flex items-center gap-4">
-          <Button variant="ghost" size="icon" className="hover:bg-gray-100">
+          <Button variant="ghost" size="icon" className="hover:bg-gray-100 dark:hover:bg-gray-700">
             <Search className="h-5 w-5" />
           </Button>
+          <ThemeToggle />
           
           {/* Mobile Menu Toggle */}
           <button
-            className="block lg:hidden p-2 rounded-md hover:bg-gray-100 transition-colors duration-200"
+            className="block lg:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
             onClick={handleMenuToggle}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
@@ -159,7 +161,7 @@ const Header = () => {
       </div>
 
       {/* Navigation */}
-      <div className={`bg-[#00629B] lg:block overflow-hidden transition-all duration-300 ease-in-out shadow-lg ${
+      <div className={`bg-[#00629B] dark:bg-gray-800 lg:block overflow-hidden transition-all duration-300 ease-in-out shadow-lg ${
         isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0 lg:opacity-100 lg:max-h-none"
       }`}>
         <div className="container mx-auto px-4 lg:px-6">
@@ -170,7 +172,7 @@ const Header = () => {
                   <>
                     <button
                       onClick={() => handleDropdownToggle(item.label)}
-                      className="flex items-center w-full px-4 py-3 lg:py-0 lg:h-14 text-[13px] font-bold text-white transition-colors duration-200 hover:bg-[#0077be] focus:outline-none"
+                      className="flex items-center w-full px-4 py-3 lg:py-0 lg:h-14 text-[13px] font-bold text-white transition-colors duration-200 hover:bg-[#0077be] dark:hover:bg-gray-700 focus:outline-none"
                     >
                       {item.label}
                       <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-300 ${
@@ -179,12 +181,12 @@ const Header = () => {
                     </button>
                     
                     {/* Desktop Dropdown */}
-                    <div className="hidden lg:block lg:absolute lg:top-full lg:left-0 lg:w-56 lg:bg-white lg:shadow-lg lg:rounded-b-md lg:opacity-0 lg:invisible lg:transform lg:translate-y-2 lg:transition-all lg:duration-200 group-hover:lg:opacity-100 group-hover:lg:visible group-hover:lg:translate-y-0 z-50">
+                    <div className="hidden lg:block lg:absolute lg:top-full lg:left-0 lg:w-56 lg:bg-white dark:lg:bg-gray-700 lg:shadow-lg lg:rounded-b-md lg:opacity-0 lg:invisible lg:transform lg:translate-y-2 lg:transition-all lg:duration-200 group-hover:lg:opacity-100 group-hover:lg:visible group-hover:lg:translate-y-0 z-50">
                       {item.dropdown.map((dropdownItem) => (
                         <Link
                           key={dropdownItem.label}
                           href={dropdownItem.href}
-                          className="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-[#00629B] transition-colors"
+                          className="block px-4 py-3 text-sm text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-600 hover:text-[#00629B] dark:hover:text-white transition-colors"
                         >
                           {dropdownItem.label}
                         </Link>
@@ -192,14 +194,14 @@ const Header = () => {
                     </div>
                     
                     {/* Mobile Dropdown */}
-                    <div className={`lg:hidden bg-[#0077be] pl-8 overflow-hidden transition-all duration-300 ease-in-out ${
+                    <div className={`lg:hidden bg-[#0077be] dark:bg-gray-700 pl-8 overflow-hidden transition-all duration-300 ease-in-out ${
                       activeDropdown === item.label ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                     }`}>
                       {item.dropdown.map((dropdownItem) => (
                         <Link
                           key={dropdownItem.label}
                           href={dropdownItem.href}
-                          className="block px-4 py-2 text-[13px] text-white hover:bg-[#005a8f] transition-colors duration-200"
+                          className="block px-4 py-2 text-[13px] text-white hover:bg-[#005a8f] dark:hover:bg-gray-600 transition-colors duration-200"
                           onClick={closeMenu}
                         >
                           {dropdownItem.label}
@@ -210,7 +212,7 @@ const Header = () => {
                 ) : (
                   <Link
                     href={item.href}
-                    className="flex items-center px-4 py-3 lg:py-0 lg:h-14 text-[13px] font-bold text-white transition-colors duration-200 hover:bg-[#0077be]"
+                    className="flex items-center px-4 py-3 lg:py-0 lg:h-14 text-[13px] font-bold text-white transition-colors duration-200 hover:bg-[#0077be] dark:hover:bg-gray-700"
                     onClick={closeMenu}
                   >
                     {item.label}

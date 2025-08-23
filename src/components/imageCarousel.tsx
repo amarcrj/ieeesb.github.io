@@ -94,7 +94,7 @@ const ImageCarousel = () => {
                 <Button
                   size="lg"
                   variant="secondary"
-                  className="rounded-full bg-white px-6 sm:px-8 text-sm sm:text-base text-[#00629B] hover:bg-blue-50 shadow-lg"
+                  className="rounded-full bg-white dark:bg-gray-700 px-6 sm:px-8 text-sm sm:text-base text-[#00629B] dark:text-white hover:bg-blue-50 dark:hover:bg-gray-600 shadow-lg"
                 >
                   {slide.buttonText}
                 </Button>

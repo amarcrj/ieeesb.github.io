@@ -103,7 +103,7 @@ interface Event {
 }
 
 const EventCard = ({ event, isPast = false }: { event: Event; isPast?: boolean }) => (
-  <Card className={`group overflow-hidden transition-all duration-300 hover:shadow-xl ${event.featured && !isPast ? 'ring-2 ring-[#00629B] ring-opacity-50' : ''}`}>
+  <Card className={`group overflow-hidden transition-all duration-300 hover:shadow-xl bg-white dark:bg-gray-700 border dark:border-gray-600 ${event.featured && !isPast ? 'ring-2 ring-[#00629B] ring-opacity-50' : ''}`}>
     <CardContent className="p-0">
       <div className="relative">
         <div className="relative h-[250px] overflow-hidden">
@@ -115,7 +115,7 @@ const EventCard = ({ event, isPast = false }: { event: Event; isPast?: boolean }
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
           {event.featured && !isPast && (
-            <Badge className="absolute left-4 top-4 bg-[#00629B] text-white">
+            <Badge className="absolute left-4 top-4 bg-[#00629B] dark:bg-blue-600 text-white">
               FEATURED
             </Badge>
           )}
@@ -136,12 +136,12 @@ const EventCard = ({ event, isPast = false }: { event: Event; isPast?: boolean }
       </div>
       
       <div className="p-6">
-        <h3 className="mb-3 text-xl font-bold text-[#00629B] group-hover:text-blue-700 transition-colors">
+        <h3 className="mb-3 text-xl font-bold text-[#00629B] dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors">
           {event.title}
         </h3>
         
         <div className="mb-4 space-y-2">
-          <div className="flex items-center text-sm text-gray-600">
+          <div className="flex items-center text-sm text-gray-600 dark:text-gray-300">
             <Calendar className="mr-2 h-4 w-4" />
             {new Date(event.date).toLocaleDateString('en-US', { 
               weekday: 'long', 
@@ -151,33 +151,33 @@ const EventCard = ({ event, isPast = false }: { event: Event; isPast?: boolean }
             })}
           </div>
           {event.time && (
-            <div className="flex items-center text-sm text-gray-600">
+            <div className="flex items-center text-sm text-gray-600 dark:text-gray-300">
               <Clock className="mr-2 h-4 w-4" />
               {event.time}
             </div>
           )}
-          <div className="flex items-center text-sm text-gray-600">
+          <div className="flex items-center text-sm text-gray-600 dark:text-gray-300">
             <MapPin className="mr-2 h-4 w-4" />
             {event.location}
           </div>
-          <div className="flex items-center text-sm text-gray-600">
+          <div className="flex items-center text-sm text-gray-600 dark:text-gray-300">
             <Users className="mr-2 h-4 w-4" />
             {event.attendees} {isPast ? 'attended' : 'registered'}
           </div>
         </div>
         
-        <p className="mb-4 text-sm text-gray-700 leading-relaxed">
+        <p className="mb-4 text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
           {event.description}
         </p>
         
         {!isPast && (
           <div className="flex items-center justify-between">
-            <button className="bg-[#00629B] text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors">
+            <button className="bg-[#00629B] dark:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 dark:hover:bg-blue-500 transition-colors">
               Register Now
             </button>
             <a 
               href="#" 
-              className="flex items-center text-sm text-[#00629B] hover:text-blue-700 transition-colors"
+              className="flex items-center text-sm text-[#00629B] dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
             >
               <ExternalLink className="mr-1 h-4 w-4" />
               Details
@@ -191,11 +191,11 @@ const EventCard = ({ event, isPast = false }: { event: Event; isPast?: boolean }
 
 export default function Events() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col bg-white dark:bg-gray-900">
       <Header />
       <main className="pt-[104px]">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-[#00629B] to-blue-700 py-8 sm:py-12 lg:py-16 text-white">
+        <section className="bg-gradient-to-r from-[#00629B] to-blue-700 dark:from-gray-800 dark:to-gray-900 py-8 sm:py-12 lg:py-16 text-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="mb-4 sm:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
               IEEE Events
@@ -208,13 +208,13 @@ export default function Events() {
         </section>
 
         {/* Upcoming Events */}
-        <section className="py-8 sm:py-12 lg:py-16 bg-white">
+        <section className="py-8 sm:py-12 lg:py-16 bg-white dark:bg-gray-900">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-8 sm:mb-12 text-center">
-              <h2 className="mb-4 text-2xl sm:text-3xl font-bold text-[#00629B]">
+              <h2 className="mb-4 text-2xl sm:text-3xl font-bold text-[#00629B] dark:text-blue-400">
                 Upcoming Events
               </h2>
-              <p className="mx-auto max-w-2xl text-sm sm:text-base text-gray-700 px-4 sm:px-0">
+              <p className="mx-auto max-w-2xl text-sm sm:text-base text-gray-700 dark:text-gray-300 px-4 sm:px-0">
                 Don&apos;t miss out on these exciting opportunities to learn, compete, and network 
                 with fellow technology enthusiasts.
               </p>
@@ -229,60 +229,60 @@ export default function Events() {
         </section>
 
         {/* Event Categories */}
-        <section className="py-8 sm:py-12 lg:py-16 bg-gray-50">
+        <section className="py-8 sm:py-12 lg:py-16 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-8 sm:mb-12 text-center">
-              <h2 className="mb-4 text-2xl sm:text-3xl font-bold text-[#00629B]">
+              <h2 className="mb-4 text-2xl sm:text-3xl font-bold text-[#00629B] dark:text-blue-400">
                 Event Categories
               </h2>
             </div>
             
             <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-              <Card className="text-center group hover:shadow-lg transition-all">
+              <Card className="text-center group hover:shadow-lg transition-all bg-white dark:bg-gray-700 border dark:border-gray-600">
                 <CardContent className="p-6">
                   <div className="mb-4 flex justify-center">
-                    <div className="rounded-full bg-green-100 p-3 group-hover:bg-green-200 transition-colors">
-                      <Users className="h-8 w-8 text-green-600" />
+                    <div className="rounded-full bg-green-100 dark:bg-green-800 p-3 group-hover:bg-green-200 dark:group-hover:bg-green-700 transition-colors">
+                      <Users className="h-8 w-8 text-green-600 dark:text-green-300" />
                     </div>
                   </div>
-                  <h3 className="mb-2 text-lg font-semibold text-gray-800">Workshops</h3>
-                  <p className="text-sm text-gray-600">Hands-on technical training sessions</p>
+                  <h3 className="mb-2 text-lg font-semibold text-gray-800 dark:text-white">Workshops</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">Hands-on technical training sessions</p>
                 </CardContent>
               </Card>
               
-              <Card className="text-center group hover:shadow-lg transition-all">
+              <Card className="text-center group hover:shadow-lg transition-all bg-white dark:bg-gray-700 border dark:border-gray-600">
                 <CardContent className="p-6">
                   <div className="mb-4 flex justify-center">
-                    <div className="rounded-full bg-red-100 p-3 group-hover:bg-red-200 transition-colors">
-                      <ExternalLink className="h-8 w-8 text-red-600" />
+                    <div className="rounded-full bg-red-100 dark:bg-red-800 p-3 group-hover:bg-red-200 dark:group-hover:bg-red-700 transition-colors">
+                      <ExternalLink className="h-8 w-8 text-red-600 dark:text-red-300" />
                     </div>
                   </div>
-                  <h3 className="mb-2 text-lg font-semibold text-gray-800">Competitions</h3>
-                  <p className="text-sm text-gray-600">Technical challenges and contests</p>
+                  <h3 className="mb-2 text-lg font-semibold text-gray-800 dark:text-white">Competitions</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">Technical challenges and contests</p>
                 </CardContent>
               </Card>
               
-              <Card className="text-center group hover:shadow-lg transition-all">
+              <Card className="text-center group hover:shadow-lg transition-all bg-white dark:bg-gray-700 border dark:border-gray-600">
                 <CardContent className="p-6">
                   <div className="mb-4 flex justify-center">
-                    <div className="rounded-full bg-blue-100 p-3 group-hover:bg-blue-200 transition-colors">
-                      <Calendar className="h-8 w-8 text-blue-600" />
+                    <div className="rounded-full bg-blue-100 dark:bg-blue-800 p-3 group-hover:bg-blue-200 dark:group-hover:bg-blue-700 transition-colors">
+                      <Calendar className="h-8 w-8 text-blue-600 dark:text-blue-300" />
                     </div>
                   </div>
-                  <h3 className="mb-2 text-lg font-semibold text-gray-800">Lectures</h3>
-                  <p className="text-sm text-gray-600">Industry talks and academic presentations</p>
+                  <h3 className="mb-2 text-lg font-semibold text-gray-800 dark:text-white">Lectures</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">Industry talks and academic presentations</p>
                 </CardContent>
               </Card>
               
-              <Card className="text-center group hover:shadow-lg transition-all">
+              <Card className="text-center group hover:shadow-lg transition-all bg-white dark:bg-gray-700 border dark:border-gray-600">
                 <CardContent className="p-6">
                   <div className="mb-4 flex justify-center">
-                    <div className="rounded-full bg-purple-100 p-3 group-hover:bg-purple-200 transition-colors">
-                      <Users className="h-8 w-8 text-purple-600" />
+                    <div className="rounded-full bg-purple-100 dark:bg-purple-800 p-3 group-hover:bg-purple-200 dark:group-hover:bg-purple-700 transition-colors">
+                      <Users className="h-8 w-8 text-purple-600 dark:text-purple-300" />
                     </div>
                   </div>
-                  <h3 className="mb-2 text-lg font-semibold text-gray-800">Networking</h3>
-                  <p className="text-sm text-gray-600">Professional and social gatherings</p>
+                  <h3 className="mb-2 text-lg font-semibold text-gray-800 dark:text-white">Networking</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">Professional and social gatherings</p>
                 </CardContent>
               </Card>
             </div>
@@ -290,13 +290,13 @@ export default function Events() {
         </section>
 
         {/* Past Events */}
-        <section className="py-8 sm:py-12 lg:py-16 bg-white">
+        <section className="py-8 sm:py-12 lg:py-16 bg-white dark:bg-gray-900">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-8 sm:mb-12 text-center">
-              <h2 className="mb-4 text-2xl sm:text-3xl font-bold text-[#00629B]">
+              <h2 className="mb-4 text-2xl sm:text-3xl font-bold text-[#00629B] dark:text-blue-400">
                 Past Events
               </h2>
-              <p className="mx-auto max-w-2xl text-sm sm:text-base text-gray-700 px-4 sm:px-0">
+              <p className="mx-auto max-w-2xl text-sm sm:text-base text-gray-700 dark:text-gray-300 px-4 sm:px-0">
                 Look back at our recent successful events and see what you might have missed.
               </p>
             </div>
@@ -310,7 +310,7 @@ export default function Events() {
         </section>
 
         {/* Call to Action */}
-        <section className="py-8 sm:py-12 lg:py-16 bg-[#00629B] text-white">
+        <section className="py-8 sm:py-12 lg:py-16 bg-[#00629B] dark:bg-gray-800 text-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="mb-6 text-3xl font-bold">Stay Updated</h2>
             <p className="mb-8 mx-auto max-w-2xl text-lg opacity-90">
@@ -318,10 +318,10 @@ export default function Events() {
               or follow us on social media for the latest updates.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[#00629B] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+              <button className="bg-white text-[#00629B] dark:bg-gray-700 dark:text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors">
                 Subscribe to Newsletter
               </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#00629B] transition-colors">
+              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#00629B] dark:hover:bg-gray-700 dark:hover:text-white transition-colors">
                 Follow Us
               </button>
             </div>

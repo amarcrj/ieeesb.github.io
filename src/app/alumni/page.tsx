@@ -100,7 +100,7 @@ interface Alumni {
 }
 
 const AlumniCard = ({ alumni }: { alumni: Alumni }) => (
-  <Card className={`group overflow-hidden transition-all duration-300 hover:shadow-xl ${alumni.featured ? 'ring-2 ring-[#00629B] ring-opacity-50' : ''}`}>
+  <Card className={`group overflow-hidden transition-all duration-300 hover:shadow-xl bg-white dark:bg-gray-700 border dark:border-gray-600 ${alumni.featured ? 'ring-2 ring-[#00629B] ring-opacity-50' : ''}`}>
     <CardContent className="p-0">
       <div className="relative">
         <div className="relative h-[280px] overflow-hidden">
@@ -112,7 +112,7 @@ const AlumniCard = ({ alumni }: { alumni: Alumni }) => (
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
           {alumni.featured && (
-            <Badge className="absolute left-4 top-4 bg-[#00629B] text-white">
+            <Badge className="absolute left-4 top-4 bg-[#00629B] dark:bg-blue-600 text-white">
               FEATURED
             </Badge>
           )}
@@ -125,26 +125,26 @@ const AlumniCard = ({ alumni }: { alumni: Alumni }) => (
       
       <div className="p-6">
         <div className="mb-4">
-          <h4 className="text-lg font-semibold text-[#00629B] mb-1">{alumni.position}</h4>
-          <div className="flex items-center text-gray-600 text-sm mb-2">
+          <h4 className="text-lg font-semibold text-[#00629B] dark:text-blue-400 mb-1">{alumni.position}</h4>
+          <div className="flex items-center text-gray-600 dark:text-gray-300 text-sm mb-2">
             <Building className="mr-2 h-4 w-4" />
             {alumni.company}
           </div>
-          <div className="flex items-center text-gray-600 text-sm">
+          <div className="flex items-center text-gray-600 dark:text-gray-300 text-sm">
             <MapPin className="mr-2 h-4 w-4" />
             {alumni.location}
           </div>
         </div>
         
-        <p className="mb-4 text-sm text-gray-700 leading-relaxed">
+        <p className="mb-4 text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
           {alumni.bio}
         </p>
         
         <div className="mb-4">
-          <h5 className="text-sm font-semibold text-gray-800 mb-2">Key Achievements:</h5>
+          <h5 className="text-sm font-semibold text-gray-800 dark:text-white mb-2">Key Achievements:</h5>
           <div className="flex flex-wrap gap-2">
             {alumni.achievements.map((achievement: string, index: number) => (
-              <Badge key={index} variant="outline" className="text-xs">
+              <Badge key={index} variant="outline" className="text-xs border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300">
                 {achievement}
               </Badge>
             ))}
@@ -154,14 +154,14 @@ const AlumniCard = ({ alumni }: { alumni: Alumni }) => (
         <div className="flex items-center justify-between">
           <a 
             href={alumni.linkedin}
-            className="flex items-center text-[#00629B] hover:text-blue-700 transition-colors"
+            className="flex items-center text-[#00629B] dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
           >
             <Linkedin className="mr-2 h-4 w-4" />
             <span className="text-sm">Connect</span>
           </a>
           <a 
             href="#" 
-            className="flex items-center text-gray-600 hover:text-gray-800 transition-colors"
+            className="flex items-center text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors"
           >
             <ExternalLink className="mr-1 h-4 w-4" />
             <span className="text-sm">Profile</span>
@@ -174,11 +174,11 @@ const AlumniCard = ({ alumni }: { alumni: Alumni }) => (
 
 export default function Alumni() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col bg-white dark:bg-gray-900">
       <Header />
       <main className="pt-[104px]">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-[#00629B] to-blue-700 py-8 sm:py-12 lg:py-16 text-white">
+        <section className="bg-gradient-to-r from-[#00629B] to-blue-700 dark:from-gray-800 dark:to-gray-900 py-8 sm:py-12 lg:py-16 text-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="mb-4 sm:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
               IEEE Alumni Network
@@ -205,13 +205,13 @@ export default function Alumni() {
         </section>
 
         {/* Featured Alumni */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-white dark:bg-gray-900">
           <div className="container mx-auto px-4">
             <div className="mb-12 text-center">
-              <h2 className="mb-4 text-3xl font-bold text-[#00629B]">
+              <h2 className="mb-4 text-3xl font-bold text-[#00629B] dark:text-blue-400">
                 Featured Alumni
               </h2>
-              <p className="mx-auto max-w-2xl text-gray-700">
+              <p className="mx-auto max-w-2xl text-gray-700 dark:text-gray-300">
                 Meet some of our distinguished graduates who are leading innovation 
                 and making significant contributions to their fields.
               </p>
@@ -226,34 +226,34 @@ export default function Alumni() {
         </section>
 
         {/* Alumni by Graduation Year */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto px-4">
             <div className="mb-12 text-center">
-              <h2 className="mb-4 text-3xl font-bold text-[#00629B]">
+              <h2 className="mb-4 text-3xl font-bold text-[#00629B] dark:text-blue-400">
                 Alumni by Class
               </h2>
-              <p className="mx-auto max-w-2xl text-gray-700">
+              <p className="mx-auto max-w-2xl text-gray-700 dark:text-gray-300">
                 Track record of our graduates across different years and their achievements.
               </p>
             </div>
             
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
               {alumniByYear.map((yearData, index) => (
-                <Card key={index} className="text-center group hover:shadow-lg transition-all">
+                <Card key={index} className="text-center group hover:shadow-lg transition-all bg-white dark:bg-gray-700 border dark:border-gray-600">
                   <CardContent className="p-6">
                     <div className="mb-4">
-                      <h3 className="text-xl font-bold text-[#00629B] mb-2">{yearData.year}</h3>
-                      <div className="flex items-center justify-center text-gray-600">
+                      <h3 className="text-xl font-bold text-[#00629B] dark:text-blue-400 mb-2">{yearData.year}</h3>
+                      <div className="flex items-center justify-center text-gray-600 dark:text-gray-300">
                         <Users className="mr-2 h-5 w-5" />
                         <span className="text-lg font-semibold">{yearData.count} Graduates</span>
                       </div>
                     </div>
                     <div className="text-left">
-                      <h4 className="text-sm font-semibold text-gray-800 mb-2">Highlights:</h4>
-                      <ul className="text-sm text-gray-600 space-y-1">
+                      <h4 className="text-sm font-semibold text-gray-800 dark:text-white mb-2">Highlights:</h4>
+                      <ul className="text-sm text-gray-600 dark:text-gray-300 space-y-1">
                         {yearData.highlights.map((highlight, idx) => (
                           <li key={idx} className="flex items-start">
-                            <span className="text-[#00629B] mr-1">•</span>
+                            <span className="text-[#00629B] dark:text-blue-400 mr-1">•</span>
                             {highlight}
                           </li>
                         ))}
@@ -267,20 +267,20 @@ export default function Alumni() {
         </section>
 
         {/* Where They Work */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-white dark:bg-gray-900">
           <div className="container mx-auto px-4">
             <div className="mb-12 text-center">
-              <h2 className="mb-4 text-3xl font-bold text-[#00629B]">
+              <h2 className="mb-4 text-3xl font-bold text-[#00629B] dark:text-blue-400">
                 Where Our Alumni Work
               </h2>
-              <p className="mx-auto max-w-2xl text-gray-700">
+              <p className="mx-auto max-w-2xl text-gray-700 dark:text-gray-300">
                 Our graduates are employed at leading technology companies worldwide.
               </p>
             </div>
             
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {companies.map((company, index) => (
-                <Card key={index} className="group hover:shadow-md transition-all">
+                <Card key={index} className="group hover:shadow-md transition-all bg-white dark:bg-gray-700 border dark:border-gray-600">
                   <CardContent className="p-6 flex items-center space-x-4">
                     <div className="relative h-12 w-20 flex-shrink-0">
                       <Image
@@ -291,8 +291,8 @@ export default function Alumni() {
                       />
                     </div>
                     <div className="flex-grow">
-                      <h3 className="text-lg font-semibold text-gray-800">{company.name}</h3>
-                      <p className="text-sm text-gray-600">{company.count} alumni</p>
+                      <h3 className="text-lg font-semibold text-gray-800 dark:text-white">{company.name}</h3>
+                      <p className="text-sm text-gray-600 dark:text-gray-300">{company.count} alumni</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -302,48 +302,48 @@ export default function Alumni() {
         </section>
 
         {/* Alumni Network Benefits */}
-        <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+        <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-800 dark:to-gray-700">
           <div className="container mx-auto px-4">
             <div className="mb-12 text-center">
-              <h2 className="mb-4 text-3xl font-bold text-[#00629B]">
+              <h2 className="mb-4 text-3xl font-bold text-[#00629B] dark:text-blue-400">
                 Alumni Network Benefits
               </h2>
             </div>
             
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              <Card className="text-center group hover:shadow-lg transition-all">
+              <Card className="text-center group hover:shadow-lg transition-all bg-white dark:bg-gray-700 border dark:border-gray-600">
                 <CardContent className="p-6">
                   <div className="mb-4 flex justify-center">
-                    <div className="rounded-full bg-blue-100 p-3 group-hover:bg-blue-200 transition-colors">
-                      <Users className="h-8 w-8 text-blue-600" />
+                    <div className="rounded-full bg-blue-100 dark:bg-blue-800 p-3 group-hover:bg-blue-200 dark:group-hover:bg-blue-700 transition-colors">
+                      <Users className="h-8 w-8 text-blue-600 dark:text-blue-300" />
                     </div>
                   </div>
-                  <h3 className="mb-2 text-lg font-semibold text-gray-800">Mentorship</h3>
-                  <p className="text-sm text-gray-600">Connect with experienced alumni for career guidance and advice</p>
+                  <h3 className="mb-2 text-lg font-semibold text-gray-800 dark:text-white">Mentorship</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">Connect with experienced alumni for career guidance and advice</p>
                 </CardContent>
               </Card>
               
-              <Card className="text-center group hover:shadow-lg transition-all">
+              <Card className="text-center group hover:shadow-lg transition-all bg-white dark:bg-gray-700 border dark:border-gray-600">
                 <CardContent className="p-6">
                   <div className="mb-4 flex justify-center">
-                    <div className="rounded-full bg-green-100 p-3 group-hover:bg-green-200 transition-colors">
-                      <Building className="h-8 w-8 text-green-600" />
+                    <div className="rounded-full bg-green-100 dark:bg-green-800 p-3 group-hover:bg-green-200 dark:group-hover:bg-green-700 transition-colors">
+                      <Building className="h-8 w-8 text-green-600 dark:text-green-300" />
                     </div>
                   </div>
-                  <h3 className="mb-2 text-lg font-semibold text-gray-800">Job Opportunities</h3>
-                  <p className="text-sm text-gray-600">Access exclusive job postings and referrals from our network</p>
+                  <h3 className="mb-2 text-lg font-semibold text-gray-800 dark:text-white">Job Opportunities</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">Access exclusive job postings and referrals from our network</p>
                 </CardContent>
               </Card>
               
-              <Card className="text-center group hover:shadow-lg transition-all">
+              <Card className="text-center group hover:shadow-lg transition-all bg-white dark:bg-gray-700 border dark:border-gray-600">
                 <CardContent className="p-6">
                   <div className="mb-4 flex justify-center">
-                    <div className="rounded-full bg-purple-100 p-3 group-hover:bg-purple-200 transition-colors">
-                      <Award className="h-8 w-8 text-purple-600" />
+                    <div className="rounded-full bg-purple-100 dark:bg-purple-800 p-3 group-hover:bg-purple-200 dark:group-hover:bg-purple-700 transition-colors">
+                      <Award className="h-8 w-8 text-purple-600 dark:text-purple-300" />
                     </div>
                   </div>
-                  <h3 className="mb-2 text-lg font-semibold text-gray-800">Recognition</h3>
-                  <p className="text-sm text-gray-600">Showcase your achievements and get recognized in our community</p>
+                  <h3 className="mb-2 text-lg font-semibold text-gray-800 dark:text-white">Recognition</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">Showcase your achievements and get recognized in our community</p>
                 </CardContent>
               </Card>
             </div>
@@ -351,7 +351,7 @@ export default function Alumni() {
         </section>
 
         {/* Stay Connected */}
-        <section className="py-16 bg-[#00629B] text-white">
+        <section className="py-16 bg-[#00629B] dark:bg-gray-800 text-white">
           <div className="container mx-auto px-4 text-center">
             <h2 className="mb-6 text-3xl font-bold">Stay Connected</h2>
             <p className="mb-8 mx-auto max-w-2xl text-lg opacity-90">
@@ -359,11 +359,11 @@ export default function Alumni() {
               and join our active alumni community.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[#00629B] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center">
+              <button className="bg-white text-[#00629B] dark:bg-gray-700 dark:text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors flex items-center justify-center">
                 <Mail className="mr-2 h-4 w-4" />
                 Update Contact Info
               </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#00629B] transition-colors">
+              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#00629B] dark:hover:bg-gray-700 dark:hover:text-white transition-colors">
                 Join Alumni Network
               </button>
             </div>

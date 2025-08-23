@@ -137,31 +137,31 @@ const scheduleData = {
 };
 
 const typeStyles = {
-  keynote: "bg-blue-100 text-blue-800 border-blue-200",
-  session: "bg-green-100 text-green-800 border-green-200",
-  workshop: "bg-purple-100 text-purple-800 border-purple-200",
-  tutorial: "bg-orange-100 text-orange-800 border-orange-200",
-  panel: "bg-indigo-100 text-indigo-800 border-indigo-200",
-  demo: "bg-yellow-100 text-yellow-800 border-yellow-200",
-  poster: "bg-pink-100 text-pink-800 border-pink-200",
-  competition: "bg-red-100 text-red-800 border-red-200",
-  break: "bg-gray-100 text-gray-800 border-gray-200",
-  registration: "bg-cyan-100 text-cyan-800 border-cyan-200",
-  social: "bg-violet-100 text-violet-800 border-violet-200",
-  closing: "bg-emerald-100 text-emerald-800 border-emerald-200",
+  keynote: "bg-blue-100 dark:bg-blue-800 text-blue-800 dark:text-blue-300 border-blue-200 dark:border-blue-700",
+  session: "bg-green-100 dark:bg-green-800 text-green-800 dark:text-green-300 border-green-200 dark:border-green-700",
+  workshop: "bg-purple-100 dark:bg-purple-800 text-purple-800 dark:text-purple-300 border-purple-200 dark:border-purple-700",
+  tutorial: "bg-orange-100 dark:bg-orange-800 text-orange-800 dark:text-orange-300 border-orange-200 dark:border-orange-700",
+  panel: "bg-indigo-100 dark:bg-indigo-800 text-indigo-800 dark:text-indigo-300 border-indigo-200 dark:border-indigo-700",
+  demo: "bg-yellow-100 dark:bg-yellow-800 text-yellow-800 dark:text-yellow-300 border-yellow-200 dark:border-yellow-700",
+  poster: "bg-pink-100 dark:bg-pink-800 text-pink-800 dark:text-pink-300 border-pink-200 dark:border-pink-700",
+  competition: "bg-red-100 dark:bg-red-800 text-red-800 dark:text-red-300 border-red-200 dark:border-red-700",
+  break: "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 border-gray-200 dark:border-gray-600",
+  registration: "bg-cyan-100 dark:bg-cyan-800 text-cyan-800 dark:text-cyan-300 border-cyan-200 dark:border-cyan-700",
+  social: "bg-violet-100 dark:bg-violet-800 text-violet-800 dark:text-violet-300 border-violet-200 dark:border-violet-700",
+  closing: "bg-emerald-100 dark:bg-emerald-800 text-emerald-800 dark:text-emerald-300 border-emerald-200 dark:border-emerald-700",
 };
 
 const ProgramSchedule = () => {
   const [activeDay, setActiveDay] = useState("Day 1 - Sept 15");
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-50 dark:bg-gray-800">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
-          <h2 className="mb-4 text-4xl font-bold text-[#00629B]">
+          <h2 className="mb-4 text-4xl font-bold text-[#00629B] dark:text-blue-400">
             Conference Program
           </h2>
-          <p className="mx-auto max-w-2xl text-lg text-gray-700">
+          <p className="mx-auto max-w-2xl text-lg text-gray-700 dark:text-gray-300">
             Three days of cutting-edge research presentations, hands-on
             workshops, and networking opportunities with global experts.
           </p>
@@ -169,7 +169,7 @@ const ProgramSchedule = () => {
 
         {/* Day Selector */}
         <div className="mb-8 flex justify-center">
-          <div className="flex rounded-lg bg-white p-1 shadow-sm">
+          <div className="flex rounded-lg bg-white dark:bg-gray-700 border dark:border-gray-600 p-1 shadow-sm">
             {Object.keys(scheduleData).map((day) => (
               <Button
                 key={day}
@@ -177,8 +177,8 @@ const ProgramSchedule = () => {
                 onClick={() => setActiveDay(day)}
                 className={`${
                   activeDay === day
-                    ? "bg-[#00629B] text-white"
-                    : "text-gray-600 hover:bg-gray-100"
+                    ? "bg-[#00629B] dark:bg-blue-600 text-white"
+                    : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600"
                 }`}
               >
                 {day}
@@ -193,14 +193,14 @@ const ProgramSchedule = () => {
             (item, index) => (
               <Card
                 key={index}
-                className="group transition-all duration-300 hover:shadow-md"
+                className="group transition-all duration-300 hover:shadow-md bg-white dark:bg-gray-700 border dark:border-gray-600"
               >
                 <CardContent className="p-6">
                   <div className="grid gap-4 md:grid-cols-4 md:items-center">
                     <div className="flex items-center space-x-3 md:col-span-1">
                       <div className="flex items-center space-x-2">
-                        <Clock className="h-4 w-4 text-[#00629B]" />
-                        <span className="font-semibold text-[#00629B]">
+                        <Clock className="h-4 w-4 text-[#00629B] dark:text-blue-400" />
+                        <span className="font-semibold text-[#00629B] dark:text-blue-400">
                           {item.time}
                         </span>
                       </div>
@@ -210,7 +210,7 @@ const ProgramSchedule = () => {
                       <div className="flex items-start space-x-3">
                         <div className="flex-1">
                           <div className="flex items-center space-x-3 mb-2">
-                            <h3 className="text-lg font-bold text-gray-800 group-hover:text-[#00629B] transition-colors">
+                            <h3 className="text-lg font-bold text-gray-800 dark:text-white group-hover:text-[#00629B] dark:group-hover:text-blue-400 transition-colors">
                               {item.title}
                             </h3>
                             <Badge
@@ -226,13 +226,13 @@ const ProgramSchedule = () => {
                           {item.speaker && (
                             <div className="flex items-center space-x-2 mb-2">
                               <Mic className="h-4 w-4 text-gray-500" />
-                              <span className="text-sm font-medium text-gray-700">
+                              <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                                 {item.speaker}
                               </span>
                             </div>
                           )}
 
-                          <p className="text-gray-600 text-sm leading-relaxed">
+                          <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
                             {item.description}
                           </p>
                         </div>
@@ -242,7 +242,7 @@ const ProgramSchedule = () => {
                     <div className="md:col-span-1 text-right">
                       <div className="flex items-center justify-end space-x-2">
                         <MapPin className="h-4 w-4 text-gray-500" />
-                        <span className="text-sm text-gray-600">
+                        <span className="text-sm text-gray-600 dark:text-gray-300">
                           {item.location}
                         </span>
                       </div>
@@ -255,10 +255,10 @@ const ProgramSchedule = () => {
         </div>
 
         <div className="mt-12 text-center">
-          <div className="inline-flex items-center space-x-6 rounded-lg bg-white p-6 shadow-md">
+          <div className="inline-flex items-center space-x-6 rounded-lg bg-white dark:bg-gray-700 border dark:border-gray-600 p-6 shadow-md">
             <div className="flex items-center space-x-2">
-              <Users className="h-5 w-5 text-[#00629B]" />
-              <span className="text-sm font-medium text-gray-800">
+              <Users className="h-5 w-5 text-[#00629B] dark:text-blue-400" />
+              <span className="text-sm font-medium text-gray-800 dark:text-white">
                 Full program with abstracts will be available to registered
                 attendees
               </span>

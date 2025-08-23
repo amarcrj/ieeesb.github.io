@@ -25,11 +25,11 @@ const FeaturedBoard = () => {
     <section className="container mx-auto px-4 py-12">
     <div className="grid gap-8 md:grid-cols-3">
       {featuredItems.map((item, index) => (
-        <Card key={index} className="group overflow-hidden">
+        <Card key={index} className="group overflow-hidden bg-white dark:bg-gray-700 border dark:border-gray-600">
           <CardContent className="p-0">
             <div className="relative">
               {item.featured && (
-                <Badge className="absolute left-4 top-4 z-10 bg-[#00629B] font-bold">
+                <Badge className="absolute left-4 top-4 z-10 bg-[#00629B] dark:bg-blue-600 font-bold text-white">
                   FEATURED
                 </Badge>
               )}
@@ -48,13 +48,13 @@ const FeaturedBoard = () => {
                   <Badge
                     key={badge}
                     variant="outline"
-                    className="border-[#00629B] text-[#00629B]"
+                    className="border-[#00629B] dark:border-blue-400 text-[#00629B] dark:text-blue-400"
                   >
                     {badge}
                   </Badge>
                 ))}
               </div>
-              <h3 className="text-lg font-bold text-[#00629B] transition-colors group-hover:text-[#0077be]">
+              <h3 className="text-lg font-bold text-[#00629B] dark:text-blue-400 transition-colors group-hover:text-[#0077be] dark:group-hover:text-blue-300">
                 {item.title}
               </h3>
             </div>

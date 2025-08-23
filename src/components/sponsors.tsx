@@ -92,13 +92,13 @@ const sponsorTiers = [
 
 const Sponsors = () => {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
-          <h2 className="mb-4 text-4xl font-bold text-[#00629B]">
+          <h2 className="mb-4 text-4xl font-bold text-[#00629B] dark:text-blue-400">
             Sponsors & Partners
           </h2>
-          <p className="mx-auto max-w-2xl text-lg text-gray-700">
+          <p className="mx-auto max-w-2xl text-lg text-gray-700 dark:text-gray-300">
             We thank our generous sponsors and partners for their support in making 
             IEEE RTSI 2025 a world-class conference experience.
           </p>
@@ -108,19 +108,19 @@ const Sponsors = () => {
           {sponsorTiers.map((tier, tierIndex) => (
             <div key={tierIndex} className="text-center">
               <div className="mb-8 flex items-center justify-center">
-                <Badge className={`${tier.badge} text-white px-4 py-2 text-lg font-semibold`}>
+                <Badge className={`${tier.badge} dark:bg-opacity-80 text-white px-4 py-2 text-lg font-semibold`}>
                   {tier.level}
                 </Badge>
               </div>
               
-              <div className={`rounded-2xl bg-gradient-to-r ${tier.color} p-8`}>
+              <div className={`rounded-2xl bg-gradient-to-r ${tier.color} dark:from-gray-700 dark:to-gray-600 p-8`}>
                 <div className={`grid gap-8 ${
                   tier.sponsors.length === 1 ? 'grid-cols-1 max-w-md mx-auto' :
                   tier.sponsors.length <= 2 ? 'grid-cols-1 md:grid-cols-2 max-w-2xl mx-auto' :
                   'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
                 }`}>
                   {tier.sponsors.map((sponsor, index) => (
-                    <Card key={index} className="group transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                    <Card key={index} className="group transition-all duration-300 hover:shadow-lg hover:-translate-y-1 bg-white dark:bg-gray-700 border dark:border-gray-600">
                       <CardContent className="p-6 flex flex-col items-center text-center h-full">
                         <div className="relative mb-4 flex items-center justify-center h-16 w-full">
                           <Image
@@ -131,10 +131,10 @@ const Sponsors = () => {
                             className="max-h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-110"
                           />
                         </div>
-                        <h3 className="text-lg font-bold text-[#00629B] mb-2">
+                        <h3 className="text-lg font-bold text-[#00629B] dark:text-blue-400 mb-2">
                           {sponsor.name}
                         </h3>
-                        <p className="text-sm text-gray-600 leading-relaxed">
+                        <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                           {sponsor.description}
                         </p>
                       </CardContent>
@@ -147,15 +147,15 @@ const Sponsors = () => {
         </div>
 
         <div className="mt-16 text-center">
-          <div className="inline-flex flex-col items-center space-y-4 rounded-lg bg-gradient-to-r from-blue-50 to-indigo-50 p-8">
-            <h3 className="text-xl font-bold text-[#00629B]">
+          <div className="inline-flex flex-col items-center space-y-4 rounded-lg bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-700 dark:to-gray-600 border dark:border-gray-600 p-8">
+            <h3 className="text-xl font-bold text-[#00629B] dark:text-blue-400">
               Become a Sponsor
             </h3>
-            <p className="max-w-md text-gray-700">
+            <p className="max-w-md text-gray-700 dark:text-gray-300">
               Join leading organizations in supporting the advancement of real-time 
               computing and robotics research.
             </p>
-            <div className="flex gap-4 text-sm text-gray-600">
+            <div className="flex gap-4 text-sm text-gray-600 dark:text-gray-300">
               <div className="text-center">
                 <p className="font-semibold">500+</p>
                 <p>Attendees</p>

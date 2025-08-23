@@ -135,7 +135,7 @@ interface TeamMember {
 }
 
 const TeamMemberCard = ({ member }: { member: TeamMember }) => (
-  <Card className="group overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+  <Card className="group overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 bg-white dark:bg-gray-700 border dark:border-gray-600">
     <CardContent className="p-0">
       <div className="relative">
         <div className="relative h-[300px] overflow-hidden">
@@ -156,30 +156,30 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => (
       <div className="p-6">
         <div className="mb-3 flex items-center justify-between">
           <div>
-            <p className="text-sm font-medium text-gray-600">{member.year} • {member.major}</p>
+            <p className="text-sm font-medium text-gray-600 dark:text-gray-300">{member.year} • {member.major}</p>
           </div>
         </div>
         
-        <p className="mb-4 text-sm text-gray-700 leading-relaxed">
+        <p className="mb-4 text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
           {member.bio}
         </p>
         
         <div className="flex items-center space-x-3">
           <a 
             href={`mailto:${member.email}`}
-            className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 text-gray-600 hover:bg-[#00629B] hover:text-white transition-colors"
+            className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-600 text-gray-600 dark:text-gray-300 hover:bg-[#00629B] hover:text-white transition-colors"
           >
             <Mail className="h-4 w-4" />
           </a>
           <a 
             href={member.linkedin}
-            className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 text-gray-600 hover:bg-[#0077be] hover:text-white transition-colors"
+            className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-600 text-gray-600 dark:text-gray-300 hover:bg-[#0077be] hover:text-white transition-colors"
           >
             <Linkedin className="h-4 w-4" />
           </a>
           <a 
             href={member.github}
-            className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 text-gray-600 hover:bg-gray-800 hover:text-white transition-colors"
+            className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-600 text-gray-600 dark:text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
           >
             <Github className="h-4 w-4" />
           </a>
@@ -191,11 +191,11 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => (
 
 export default function Team() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col bg-white dark:bg-gray-900">
       <Header />
       <main className="pt-[104px]">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-[#00629B] to-blue-700 py-8 sm:py-12 lg:py-16 text-white">
+        <section className="bg-gradient-to-r from-[#00629B] to-blue-700 dark:from-gray-800 dark:to-gray-900 py-8 sm:py-12 lg:py-16 text-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="mb-4 sm:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
               Meet Our Team
@@ -208,13 +208,13 @@ export default function Team() {
         </section>
 
         {/* Executive Board */}
-        <section className="py-8 sm:py-12 lg:py-16 bg-white">
+        <section className="py-8 sm:py-12 lg:py-16 bg-white dark:bg-gray-900">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-8 sm:mb-12 text-center">
-              <h2 className="mb-4 text-2xl sm:text-3xl font-bold text-[#00629B]">
+              <h2 className="mb-4 text-2xl sm:text-3xl font-bold text-[#00629B] dark:text-blue-400">
                 Executive Board
               </h2>
-              <p className="mx-auto max-w-2xl text-sm sm:text-base text-gray-700 px-4 sm:px-0">
+              <p className="mx-auto max-w-2xl text-sm sm:text-base text-gray-700 dark:text-gray-300 px-4 sm:px-0">
                 Leading our student branch with vision, dedication, and technical expertise.
               </p>
             </div>
@@ -228,13 +228,13 @@ export default function Team() {
         </section>
 
         {/* Technical Team */}
-        <section className="py-8 sm:py-12 lg:py-16 bg-gray-50">
+        <section className="py-8 sm:py-12 lg:py-16 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-8 sm:mb-12 text-center">
-              <h2 className="mb-4 text-2xl sm:text-3xl font-bold text-[#00629B]">
+              <h2 className="mb-4 text-2xl sm:text-3xl font-bold text-[#00629B] dark:text-blue-400">
                 Technical Team
               </h2>
-              <p className="mx-auto max-w-2xl text-sm sm:text-base text-gray-700 px-4 sm:px-0">
+              <p className="mx-auto max-w-2xl text-sm sm:text-base text-gray-700 dark:text-gray-300 px-4 sm:px-0">
                 Our technical specialists driving innovation in AI, robotics, and embedded systems.
               </p>
             </div>
@@ -248,13 +248,13 @@ export default function Team() {
         </section>
 
         {/* Outreach Team */}
-        <section className="py-8 sm:py-12 lg:py-16 bg-white">
+        <section className="py-8 sm:py-12 lg:py-16 bg-white dark:bg-gray-900">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-8 sm:mb-12 text-center">
-              <h2 className="mb-4 text-2xl sm:text-3xl font-bold text-[#00629B]">
+              <h2 className="mb-4 text-2xl sm:text-3xl font-bold text-[#00629B] dark:text-blue-400">
                 Outreach & Relations
               </h2>
-              <p className="mx-auto max-w-2xl text-sm sm:text-base text-gray-700 px-4 sm:px-0">
+              <p className="mx-auto max-w-2xl text-sm sm:text-base text-gray-700 dark:text-gray-300 px-4 sm:px-0">
                 Building bridges with the community and fostering industry partnerships.
               </p>
             </div>
@@ -268,21 +268,21 @@ export default function Team() {
         </section>
 
         {/* Join Us Section */}
-        <section className="py-8 sm:py-12 lg:py-16 bg-gradient-to-r from-blue-50 to-indigo-50">
+        <section className="py-8 sm:py-12 lg:py-16 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-700">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="mb-6 text-3xl font-bold text-[#00629B]">
+            <h2 className="mb-6 text-3xl font-bold text-[#00629B] dark:text-blue-400">
               Want to Join Our Team?
             </h2>
-            <p className="mb-8 mx-auto max-w-2xl text-gray-700">
+            <p className="mb-8 mx-auto max-w-2xl text-gray-700 dark:text-gray-300">
               We&apos;re always looking for passionate students to join our IEEE Student Branch. 
               Whether you&apos;re interested in technical roles, event organization, or community outreach, 
               there&apos;s a place for you in our team.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-[#00629B] text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+              <button className="bg-[#00629B] dark:bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 dark:hover:bg-blue-500 transition-colors">
                 Apply Now
               </button>
-              <button className="border-2 border-[#00629B] text-[#00629B] px-8 py-3 rounded-lg font-semibold hover:bg-[#00629B] hover:text-white transition-colors">
+              <button className="border-2 border-[#00629B] dark:border-blue-400 text-[#00629B] dark:text-blue-400 px-8 py-3 rounded-lg font-semibold hover:bg-[#00629B] dark:hover:bg-blue-600 hover:text-white transition-colors">
                 Learn More
               </button>
             </div>

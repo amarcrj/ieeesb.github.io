@@ -31,13 +31,13 @@ const speakers = [
 
 const KeynoteSpeakers = () => {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
-          <h2 className="mb-4 text-4xl font-bold text-[#00629B]">
+          <h2 className="mb-4 text-4xl font-bold text-[#00629B] dark:text-blue-400">
             Keynote Speakers
           </h2>
-          <p className="mx-auto max-w-2xl text-lg text-gray-700">
+          <p className="mx-auto max-w-2xl text-lg text-gray-700 dark:text-gray-300">
             Join us for inspiring talks from world-renowned experts in real-time computing, 
             robotics, and intelligent systems.
           </p>
@@ -45,7 +45,7 @@ const KeynoteSpeakers = () => {
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {speakers.map((speaker, index) => (
-            <Card key={index} className="group overflow-hidden transition-all duration-300 hover:shadow-xl">
+            <Card key={index} className="group overflow-hidden transition-all duration-300 hover:shadow-xl bg-white dark:bg-gray-700 border dark:border-gray-600">
               <CardContent className="p-0">
                 <div className="relative">
                   <div className="relative h-[300px] overflow-hidden">
@@ -57,7 +57,7 @@ const KeynoteSpeakers = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                     <div className="absolute bottom-4 left-4 text-white">
-                      <Badge className="mb-2 bg-[#00629B]">
+                      <Badge className="mb-2 bg-[#00629B] dark:bg-blue-600 text-white">
                         {speaker.expertise}
                       </Badge>
                     </div>
@@ -65,20 +65,20 @@ const KeynoteSpeakers = () => {
                 </div>
                 
                 <div className="p-6">
-                  <h3 className="mb-2 text-xl font-bold text-[#00629B]">
+                  <h3 className="mb-2 text-xl font-bold text-[#00629B] dark:text-blue-400">
                     {speaker.name}
                   </h3>
-                  <p className="mb-1 text-sm font-medium text-gray-600">
+                  <p className="mb-1 text-sm font-medium text-gray-600 dark:text-gray-300">
                     {speaker.title}
                   </p>
-                  <p className="mb-4 text-sm text-gray-500">
+                  <p className="mb-4 text-sm text-gray-500 dark:text-gray-400">
                     {speaker.affiliation}
                   </p>
-                  <div className="rounded-lg bg-gray-50 p-4">
-                    <h4 className="mb-2 text-sm font-semibold text-gray-800">
+                  <div className="rounded-lg bg-gray-50 dark:bg-gray-600 p-4">
+                    <h4 className="mb-2 text-sm font-semibold text-gray-800 dark:text-white">
                       Keynote Talk:
                     </h4>
-                    <p className="text-sm text-gray-700 leading-relaxed">
+                    <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
                       {speaker.talk}
                     </p>
                   </div>
@@ -89,9 +89,9 @@ const KeynoteSpeakers = () => {
         </div>
 
         <div className="mt-12 text-center">
-          <div className="inline-flex items-center rounded-lg bg-blue-50 px-6 py-4">
-            <div className="mr-4 h-3 w-3 rounded-full bg-[#00629B]"></div>
-            <p className="text-sm text-[#00629B] font-medium">
+          <div className="inline-flex items-center rounded-lg bg-blue-50 dark:bg-gray-700 border dark:border-gray-600 px-6 py-4">
+            <div className="mr-4 h-3 w-3 rounded-full bg-[#00629B] dark:bg-blue-400"></div>
+            <p className="text-sm text-[#00629B] dark:text-blue-400 font-medium">
               More keynote speakers to be announced soon!
             </p>
           </div>

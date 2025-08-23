@@ -47,13 +47,13 @@ const dates = [
 
 const ImportantDates = () => {
   return (
-    <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-50">
+    <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-700">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
-          <h2 className="mb-4 text-4xl font-bold text-[#00629B]">
+          <h2 className="mb-4 text-4xl font-bold text-[#00629B] dark:text-blue-400">
             Important Dates
           </h2>
-          <p className="mx-auto max-w-2xl text-lg text-gray-700">
+          <p className="mx-auto max-w-2xl text-lg text-gray-700 dark:text-gray-300">
             Mark your calendar with these critical deadlines and conference dates. 
             All times are in Pacific Standard Time (PST).
           </p>
@@ -63,48 +63,48 @@ const ImportantDates = () => {
           {dates.map((item, index) => {
             const Icon = item.icon;
             return (
-              <Card key={index} className="group relative overflow-hidden transition-all duration-300 hover:shadow-lg">
+              <Card key={index} className="group relative overflow-hidden transition-all duration-300 hover:shadow-lg bg-white dark:bg-gray-700 border dark:border-gray-600">
                 <CardContent className="p-6">
                   <div className="mb-4 flex items-start justify-between">
                     <div className="flex items-center space-x-3">
                       <div className={`rounded-full p-2 ${
                         item.status === 'confirmed' 
-                          ? 'bg-green-100 text-green-600' 
-                          : 'bg-blue-100 text-blue-600'
+                          ? 'bg-green-100 dark:bg-green-800 text-green-600 dark:text-green-300' 
+                          : 'bg-blue-100 dark:bg-blue-800 text-blue-600 dark:text-blue-300'
                       }`}>
                         <Icon className="h-5 w-5" />
                       </div>
                       <Badge 
                         variant={item.status === 'confirmed' ? 'default' : 'secondary'}
-                        className={item.status === 'confirmed' ? 'bg-green-100 text-green-700' : ''}
+                        className={item.status === 'confirmed' ? 'bg-green-100 dark:bg-green-800 text-green-700 dark:text-green-300' : 'bg-gray-100 dark:bg-gray-600 text-gray-700 dark:text-gray-300'}
                       >
                         {item.status === 'confirmed' ? 'Confirmed' : 'Deadline'}
                       </Badge>
                     </div>
                   </div>
                   
-                  <h3 className="mb-3 text-lg font-bold text-[#00629B] group-hover:text-blue-700 transition-colors">
+                  <h3 className="mb-3 text-lg font-bold text-[#00629B] dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors">
                     {item.event}
                   </h3>
                   
                   <div className="mb-3 space-y-1">
-                    <p className="text-xl font-semibold text-gray-800">
+                    <p className="text-xl font-semibold text-gray-800 dark:text-white">
                       {item.date}
                     </p>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-gray-600 dark:text-gray-300">
                       {item.time}
                     </p>
                   </div>
                   
-                  <p className="text-sm text-gray-700 leading-relaxed">
+                  <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
                     {item.description}
                   </p>
                   
                   {/* Progress indicator for visual appeal */}
-                  <div className="mt-4 h-1 w-full rounded-full bg-gray-200">
+                  <div className="mt-4 h-1 w-full rounded-full bg-gray-200 dark:bg-gray-600">
                     <div 
                       className={`h-1 rounded-full transition-all duration-500 group-hover:w-full ${
-                        item.status === 'confirmed' ? 'bg-green-500 w-full' : 'bg-blue-500 w-2/3'
+                        item.status === 'confirmed' ? 'bg-green-500 dark:bg-green-400 w-full' : 'bg-blue-500 dark:bg-blue-400 w-2/3'
                       }`}
                     ></div>
                   </div>
@@ -115,14 +115,14 @@ const ImportantDates = () => {
         </div>
 
         <div className="mt-12 text-center">
-          <div className="inline-flex flex-col items-center space-y-4 rounded-lg bg-white p-6 shadow-md">
+          <div className="inline-flex flex-col items-center space-y-4 rounded-lg bg-white dark:bg-gray-700 border dark:border-gray-600 p-6 shadow-md">
             <div className="flex items-center space-x-2">
-              <Clock className="h-5 w-5 text-[#00629B]" />
-              <p className="text-sm font-medium text-[#00629B]">
+              <Clock className="h-5 w-5 text-[#00629B] dark:text-blue-400" />
+              <p className="text-sm font-medium text-[#00629B] dark:text-blue-400">
                 Time Zone: Pacific Standard Time (PST)
               </p>
             </div>
-            <p className="text-xs text-gray-600 max-w-md">
+            <p className="text-xs text-gray-600 dark:text-gray-300 max-w-md">
               All submission deadlines are at 23:59 PST on the specified date. 
               Late submissions will not be accepted.
             </p>

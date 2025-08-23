@@ -15,7 +15,7 @@ const footerLinks = [
 
 const Footer = () => {
   return (
-    <footer className="mt-auto bg-[#00629B] py-8 text-white">
+    <footer className="mt-auto bg-[#00629B] dark:bg-gray-900 py-8 text-white">
       <div className="container mx-auto px-4">
         {/* Logo and Branch Info */}
         <div className="mb-8 text-center">
@@ -47,7 +47,7 @@ const Footer = () => {
         </nav>
 
         {/* Social Icons and Footer Text */}
-        <div className="flex flex-col items-center justify-between gap-6 border-t border-white/20 pt-6 md:flex-row">
+        <div className="flex flex-col items-center justify-between gap-6 border-t border-white/20 dark:border-gray-700 pt-6 md:flex-row">
           <p className="text-center text-[13px] text-white/90 md:text-left">
             © Copyright 2025 IEEE Student Branch IIITNR - All rights reserved. 
             Part of IEEE, the world&apos;s largest technical professional organization 

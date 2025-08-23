@@ -5,13 +5,13 @@ import { Button } from "@/components/ui/button";
 
 const VenueLocation = () => {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
-          <h2 className="mb-4 text-4xl font-bold text-[#00629B]">
+          <h2 className="mb-4 text-4xl font-bold text-[#00629B] dark:text-blue-400">
             Venue & Location
           </h2>
-          <p className="mx-auto max-w-2xl text-lg text-gray-700">
+          <p className="mx-auto max-w-2xl text-lg text-gray-700 dark:text-gray-300">
             Join us at a world-class conference venue in the heart of a vibrant tech hub, 
             perfectly situated for networking and collaboration.
           </p>
@@ -20,7 +20,7 @@ const VenueLocation = () => {
         <div className="grid gap-8 lg:grid-cols-2">
           {/* Venue Details */}
           <div className="space-y-6">
-            <Card className="overflow-hidden">
+            <Card className="overflow-hidden bg-white dark:bg-gray-700 border dark:border-gray-600">
               <CardContent className="p-0">
                 <div className="relative h-[300px]">
                   <Image
@@ -41,10 +41,10 @@ const VenueLocation = () => {
 
             <div className="space-y-4">
               <div className="flex items-start space-x-4">
-                <MapPin className="h-6 w-6 text-[#00629B] mt-1" />
+                <MapPin className="h-6 w-6 text-[#00629B] dark:text-blue-400 mt-1" />
                 <div>
-                  <h4 className="text-lg font-semibold text-gray-800 mb-1">Address</h4>
-                  <p className="text-gray-600">
+                  <h4 className="text-lg font-semibold text-gray-800 dark:text-white mb-1">Address</h4>
+                  <p className="text-gray-600 dark:text-gray-300">
                     123 Innovation Drive<br />
                     Tech District, Silicon Valley<br />
                     CA 94000, United States
