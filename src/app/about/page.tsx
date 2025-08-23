@@ -3,6 +3,16 @@ import Footer from "@/components/footer";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, Award, Globe, BookOpen, Target, Lightbulb } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description: "Learn about IEEE Student Branch IIITNR - Our mission, vision, history, and core values. Discover how we foster technological innovation and professional excellence among students.",
+  openGraph: {
+    title: "About IEEE Student Branch IIITNR",
+    description: "Discover our mission to foster technological innovation and professional excellence among students at IIIT Naya Raipur.",
+  },
+};
 
 const stats = [
   {

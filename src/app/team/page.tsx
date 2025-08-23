@@ -3,6 +3,16 @@ import Footer from "@/components/footer";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Linkedin, Github } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Our Team",
+  description: "Meet the dedicated team behind IEEE Student Branch IIITNR. Our executive board, technical team, and outreach coordinators working together to advance IEEE's mission.",
+  openGraph: {
+    title: "IEEE Student Branch IIITNR Team",
+    description: "Meet our diverse team of passionate engineers and technology enthusiasts working together to advance IEEE's mission on campus.",
+  },
+};
 
 const teamMembers = {
   executive: [

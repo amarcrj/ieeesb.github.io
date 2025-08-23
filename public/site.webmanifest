@@ -1,0 +1,28 @@
+{
+  "name": "IEEE Student Branch IIITNR",
+  "short_name": "IEEE IIITNR",
+  "description": "IEEE Student Branch at International Institute of Information Technology, Naya Raipur",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#00629B",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/1000119890.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/1000119890.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "categories": ["education", "technology", "engineering"],
+  "lang": "en",
+  "dir": "ltr"
+}

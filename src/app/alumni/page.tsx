@@ -4,6 +4,16 @@ import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Linkedin, ExternalLink, Building, MapPin, Users, Award, Mail } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Alumni Network",
+  description: "Connect with IEEE Student Branch IIITNR alumni making impacts across the technology industry. Explore our alumni network, achievements, and career opportunities.",
+  openGraph: {
+    title: "IEEE Student Branch IIITNR Alumni Network",
+    description: "Our graduates are making significant impacts across the technology industry, from leading research at top companies to founding innovative startups.",
+  },
+};
 
 const featuredAlumni = [
   {

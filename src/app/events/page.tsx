@@ -4,6 +4,16 @@ import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, MapPin, Users, ExternalLink } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Events",
+  description: "Explore IEEE events, workshops, competitions, and conferences. Join our technical events, networking sessions, and professional development opportunities.",
+  openGraph: {
+    title: "IEEE Student Branch IIITNR Events",
+    description: "Join our exciting lineup of workshops, competitions, lectures, and networking events designed to advance your technical skills and professional growth.",
+  },
+};
 
 const upcomingEvents = [
   {

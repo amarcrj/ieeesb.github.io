@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ieee-iiitnr.edu.in/sitemap.xml
+
+# IEEE Student Branch IIITNR
+# International Institute of Information Technology, Naya Raipur
