@@ -1,9 +1,9 @@
 "use client";
 
-
 import Footer from "@/components/footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { SparklesCore } from "@/components/ui/sparkles";
 import {
   Mail,
   Phone,
@@ -80,10 +80,19 @@ export default function Contact() {
   return (
     <div className="flex min-h-screen flex-col bg-white dark:bg-gray-900">
       
-      <main className="">
+      <main className="pt-20">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-[#00629B] to-blue-700 dark:from-gray-800 dark:to-gray-900 py-8 sm:py-12 lg:py-16 text-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="relative bg-gradient-to-r from-[#00629B] to-blue-700 dark:from-gray-800 dark:to-gray-900 py-8 sm:py-12 lg:py-16 text-white overflow-hidden">
+          <SparklesCore
+            id="contact-hero-sparkles"
+            background="transparent"
+            minSize={0.5}
+            maxSize={1.2}
+            particleDensity={35}
+            className="w-full h-full absolute inset-0"
+            particleColor="#ffffff"
+          />
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <h1 className="mb-4 sm:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
               Contact Us
             </h1>
