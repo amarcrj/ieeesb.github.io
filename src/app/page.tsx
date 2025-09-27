@@ -14,10 +14,12 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Home",
-  description: "IEEE Student Branch IIITNR - Welcome to our Technology Innovation Hub. Join our community of technology enthusiasts fostering innovation and professional development.",
+  description:
+    "IEEE Student Branch IIITNR - Welcome to our Technology Innovation Hub. Join our community of technology enthusiasts fostering innovation and professional development.",
   openGraph: {
     title: "IEEE Student Branch IIITNR - Home",
-    description: "Welcome to IEEE Student Branch at IIIT Naya Raipur - Your gateway to technological innovation and professional development.",
+    description:
+      "Welcome to IEEE Student Branch at IIIT Naya Raipur - Your gateway to technological innovation and professional development.",
   },
 };
 
@@ -26,11 +28,11 @@ const availableComponents = {
   ImageCarousel,
   AboutSection,
   ImportantDates,
-  CallForPapers,
+  // CallForPapers,
   KeynoteSpeakers,
-  ProgramSchedule,
+  // ProgramSchedule,
   VenueLocation,
-  Sponsors,
+  // Sponsors,
   FeaturedBoard,
 };
 
@@ -41,9 +43,11 @@ export default function Home() {
   );
 
   return (
-    <div className="flex min-h-screen flex-col bg-white dark:bg-gray-900" >
+    <div className="flex min-h-screen flex-col bg-white dark:bg-gray-900">
       <Header />
-      <main className="pt-[104px]"> {/* Height of header: 40px (top bar) + 80px (main header) - 16px overlap */}
+      <main className="pt-[104px]">
+        {" "}
+        {/* Height of header: 40px (top bar) + 80px (main header) - 16px overlap */}
         {componentsToShow.map(([name, Component]) => (
           <Component key={name} />
         ))}

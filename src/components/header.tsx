@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Search, Menu, X, ChevronDown } from "lucide-react";
+import { Search, Menu, X, ChevronDown, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
@@ -120,23 +120,35 @@ const Header = () => {
       <div className="container mx-auto flex h-20 items-center justify-between px-4 lg:px-6">
         <Link href="/" className="flex items-center space-x-3">
           <Image
-            width="60"
-            height="60"
-            src="/1000119890.png"
+            width={420}
+            height={120}
+            src="/1000119889.png"
             alt="IEEE Student Branch IIITNR Logo"
-            className="h-14 w-auto"
+            className="h-20 w-auto object-contain"
+            priority
+            quality={100}
           />
-          <div className="hidden md:block">
-            <h1 className="text-xl font-bold text-[#00629B] md:text-2xl">
-              IEEE Student Branch IIITNR
-            </h1>
-            <p className="text-sm text-gray-600">
-              International Institute of Information Technology, Naya Raipur
-            </p>
-          </div>
         </Link>
         
         <div className="flex items-center gap-4">
+          {/* Location and College Name */}
+          <Link
+            href="https://maps.google.com/?q=International+Institute+of+Information+Technology+Naya+Raipur"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200 group"
+          >
+            <MapPin className="h-5 w-5 text-[#00629B] group-hover:text-blue-600" />
+            <div className="text-right">
+              <div className="text-sm font-medium text-[#00629B] group-hover:text-blue-600">
+                International Institute of Information Technology
+              </div>
+              <div className="text-xs text-gray-600 dark:text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-300">
+                Naya Raipur • Get Directions
+              </div>
+            </div>
+          </Link>
+
           <Button variant="ghost" size="icon" className="hover:bg-gray-100 dark:hover:bg-gray-700">
             <Search className="h-5 w-5" />
           </Button>

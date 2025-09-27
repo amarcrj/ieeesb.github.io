@@ -7,26 +7,29 @@ const speakers = [
     name: "Dr. Raj Reddy",
     title: "Turing Award Winner",
     affiliation: "Carnegie Mellon University",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
+    image:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
     expertise: "AI & Human-Computer Interaction",
-    talk: "The Future of Human-AI Collaboration in Real-time Systems"
+    talk: "The Future of Human-AI Collaboration in Real-time Systems",
   },
   {
     name: "Dr. Daniela Rus",
     title: "Professor & Director",
     affiliation: "MIT CSAIL",
-    image: "https://images.unsplash.com/photo-1494790108755-2616c27cd5e9?w=300&h=300&fit=crop&crop=face",
+    image:
+      "https://images.unsplash.com/photo-1494790108755-2616c27cd5e9?w=300&h=300&fit=crop&crop=face",
     expertise: "Robotics & Autonomous Systems",
-    talk: "Distributed Robotics: From Theory to Real-world Applications"
+    talk: "Distributed Robotics: From Theory to Real-world Applications",
   },
   {
     name: "Dr. Kris Pister",
     title: "Professor",
     affiliation: "UC Berkeley",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
+    image:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
     expertise: "Embedded Systems & IoT",
-    talk: "Smart Dust and the Internet of Things: Real-time Computing at Scale"
-  }
+    talk: "Smart Dust and the Internet of Things: Real-time Computing at Scale",
+  },
 ];
 
 const KeynoteSpeakers = () => {
@@ -35,17 +38,20 @@ const KeynoteSpeakers = () => {
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-4xl font-bold text-[#00629B] dark:text-blue-400">
-            Keynote Speakers
+            Privious Keynote Speakers
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-gray-700 dark:text-gray-300">
-            Join us for inspiring talks from world-renowned experts in real-time computing, 
-            robotics, and intelligent systems.
+            Join us for inspiring talks from world-renowned experts in real-time
+            computing, robotics, and intelligent systems.
           </p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {speakers.map((speaker, index) => (
-            <Card key={index} className="group overflow-hidden transition-all duration-300 hover:shadow-xl bg-white dark:bg-gray-700 border dark:border-gray-600">
+            <Card
+              key={index}
+              className="group overflow-hidden transition-all duration-300 hover:shadow-xl bg-white dark:bg-gray-700 border dark:border-gray-600"
+            >
               <CardContent className="p-0">
                 <div className="relative">
                   <div className="relative h-[300px] overflow-hidden">
@@ -63,7 +69,7 @@ const KeynoteSpeakers = () => {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="p-6">
                   <h3 className="mb-2 text-xl font-bold text-[#00629B] dark:text-blue-400">
                     {speaker.name}

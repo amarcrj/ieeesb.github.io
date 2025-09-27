@@ -4,7 +4,17 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, MapPin, Clock, Send, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Clock,
+  Send,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Twitter,
+} from "lucide-react";
 import { useState } from "react";
 
 const contactInfo = [
@@ -12,33 +22,33 @@ const contactInfo = [
     icon: Mail,
     title: "Email Us",
     details: "ieee.studentbranch@university.edu",
-    subtitle: "General inquiries and membership"
+    subtitle: "General inquiries and membership",
   },
   {
     icon: Phone,
     title: "Call Us",
     details: "+1 (555) 123-4567",
-    subtitle: "Office hours: Mon-Fri 9AM-5PM"
+    subtitle: "Office hours: Mon-Fri 9AM-5PM",
   },
   {
     icon: MapPin,
     title: "Visit Us",
     details: "Engineering Building, Room 201\nUniversity Campus, Tech City",
-    subtitle: "Student organization office"
+    subtitle: "Student organization office",
   },
   {
     icon: Clock,
     title: "Office Hours",
     details: "Monday - Friday: 9:00 AM - 5:00 PM\nSaturday: 10:00 AM - 2:00 PM",
-    subtitle: "Student support and meetings"
-  }
+    subtitle: "Student support and meetings",
+  },
 ];
 
 const socialLinks = [
   { icon: Facebook, href: "#", color: "hover:text-blue-600" },
   { icon: Instagram, href: "#", color: "hover:text-pink-600" },
   { icon: Twitter, href: "#", color: "hover:text-blue-400" },
-  { icon: Linkedin, href: "#", color: "hover:text-blue-700" }
+  { icon: Linkedin, href: "#", color: "hover:text-blue-700" },
 ];
 
 export default function Contact() {
@@ -46,14 +56,18 @@ export default function Contact() {
     name: "",
     email: "",
     subject: "",
-    message: ""
+    message: "",
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -66,7 +80,7 @@ export default function Contact() {
   return (
     <div className="flex min-h-screen flex-col bg-white dark:bg-gray-900">
       <Header />
-      <main className="pt-[104px]">
+      <main className="pt-[180px]">
         {/* Hero Section */}
         <section className="bg-gradient-to-r from-[#00629B] to-blue-700 dark:from-gray-800 dark:to-gray-900 py-8 sm:py-12 lg:py-16 text-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -74,8 +88,9 @@ export default function Contact() {
               Contact Us
             </h1>
             <p className="mx-auto max-w-2xl text-sm sm:text-base lg:text-lg opacity-90 px-4 sm:px-0">
-              Get in touch with our IEEE Student Branch. We&apos;re here to help with 
-              membership, events, technical questions, and collaboration opportunities.
+              Get in touch with our IEEE Student Branch. We&apos;re here to help
+              with membership, events, technical questions, and collaboration
+              opportunities.
             </p>
           </div>
         </section>
@@ -88,15 +103,19 @@ export default function Contact() {
                 Get In Touch
               </h2>
               <p className="mx-auto max-w-2xl text-sm sm:text-base text-gray-700 dark:text-gray-300 px-4 sm:px-0">
-                Multiple ways to reach our team for different types of inquiries.
+                Multiple ways to reach our team for different types of
+                inquiries.
               </p>
             </div>
-            
+
             <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
               {contactInfo.map((info, index) => {
                 const Icon = info.icon;
                 return (
-                  <Card key={index} className="group text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1 bg-white dark:bg-gray-700 border dark:border-gray-600">
+                  <Card
+                    key={index}
+                    className="group text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1 bg-white dark:bg-gray-700 border dark:border-gray-600"
+                  >
                     <CardContent className="p-6">
                       <div className="mb-4 flex justify-center">
                         <div className="rounded-full bg-[#00629B] dark:bg-blue-600 p-3 group-hover:bg-blue-700 dark:group-hover:bg-blue-500 transition-colors">
@@ -130,14 +149,17 @@ export default function Contact() {
                   Send Us a Message
                 </h2>
                 <p className="mb-8 text-gray-700 dark:text-gray-300">
-                  Have a question or want to get involved? Fill out the form below 
-                  and we&apos;ll get back to you as soon as possible.
+                  Have a question or want to get involved? Fill out the form
+                  below and we&apos;ll get back to you as soon as possible.
                 </p>
-                
+
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid gap-6 md:grid-cols-2">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                      <label
+                        htmlFor="name"
+                        className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                      >
                         Full Name *
                       </label>
                       <input
@@ -152,7 +174,10 @@ export default function Contact() {
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                      <label
+                        htmlFor="email"
+                        className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                      >
                         Email Address *
                       </label>
                       <input
@@ -167,9 +192,12 @@ export default function Contact() {
                       />
                     </div>
                   </div>
-                  
+
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label
+                      htmlFor="subject"
+                      className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    >
                       Subject *
                     </label>
                     <select
@@ -188,9 +216,12 @@ export default function Contact() {
                       <option value="other">Other</option>
                     </select>
                   </div>
-                  
+
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    >
                       Message *
                     </label>
                     <textarea
@@ -204,8 +235,8 @@ export default function Contact() {
                       placeholder="Tell us more about your inquiry..."
                     />
                   </div>
-                  
-                  <Button 
+
+                  <Button
                     type="submit"
                     className="w-full bg-[#00629B] dark:bg-blue-600 hover:bg-blue-700 dark:hover:bg-blue-500 text-white py-3 flex items-center justify-center space-x-2"
                   >
@@ -220,7 +251,7 @@ export default function Contact() {
                 <h2 className="mb-4 sm:mb-6 text-2xl sm:text-3xl font-bold text-[#00629B] dark:text-blue-400">
                   Find Us
                 </h2>
-                
+
                 {/* Placeholder Map */}
                 <div className="mb-8 h-64 rounded-lg bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
                   <div className="text-center text-gray-500 dark:text-gray-400">
@@ -229,27 +260,38 @@ export default function Contact() {
                     <p className="text-sm">University Campus Location</p>
                   </div>
                 </div>
-                
+
                 <Card className="mb-8 bg-white dark:bg-gray-700 border dark:border-gray-600">
                   <CardContent className="p-6">
                     <h3 className="mb-4 text-lg font-semibold text-gray-800 dark:text-white">
                       Visit Our Office
                     </h3>
                     <div className="space-y-3 text-gray-700 dark:text-gray-300">
-                      <p><strong>Address:</strong><br />
-                      Engineering Building, Room 201<br />
-                      University Campus<br />
-                      Tech City, State 12345</p>
-                      
-                      <p><strong>Parking:</strong><br />
-                      Visitor parking available in Lot C</p>
-                      
-                      <p><strong>Public Transit:</strong><br />
-                      Bus routes 12, 34, and 56 stop at University Station</p>
+                      <p>
+                        <strong>Address:</strong>
+                        <br />
+                        Engineering Building, Room 201
+                        <br />
+                        University Campus
+                        <br />
+                        Tech City, State 12345
+                      </p>
+
+                      <p>
+                        <strong>Parking:</strong>
+                        <br />
+                        Visitor parking available in Lot C
+                      </p>
+
+                      <p>
+                        <strong>Public Transit:</strong>
+                        <br />
+                        Bus routes 12, 34, and 56 stop at University Station
+                      </p>
                     </div>
                   </CardContent>
                 </Card>
-                
+
                 {/* Social Media */}
                 <Card className="bg-white dark:bg-gray-700 border dark:border-gray-600">
                   <CardContent className="p-6">
@@ -288,7 +330,7 @@ export default function Contact() {
                 Frequently Asked Questions
               </h2>
             </div>
-            
+
             <div className="mx-auto max-w-3xl space-y-6">
               <Card className="bg-white dark:bg-gray-700 border dark:border-gray-600">
                 <CardContent className="p-6">
@@ -296,32 +338,35 @@ export default function Contact() {
                     How can I become a member?
                   </h3>
                   <p className="text-gray-700 dark:text-gray-300">
-                    Visit our membership page or contact us directly. We welcome all students 
-                    interested in electrical engineering, computer science, and related fields.
+                    Visit our membership page or contact us directly. We welcome
+                    all students interested in electrical engineering, computer
+                    science, and related fields.
                   </p>
                 </CardContent>
               </Card>
-              
+
               <Card className="bg-white dark:bg-gray-700 border dark:border-gray-600">
                 <CardContent className="p-6">
                   <h3 className="mb-2 text-lg font-semibold text-gray-800 dark:text-white">
                     What events do you organize?
                   </h3>
                   <p className="text-gray-700 dark:text-gray-300">
-                    We organize technical workshops, guest lectures, competitions, networking events, 
-                    and community outreach programs throughout the academic year.
+                    We organize technical workshops, guest lectures,
+                    competitions, networking events, and community outreach
+                    programs throughout the academic year.
                   </p>
                 </CardContent>
               </Card>
-              
+
               <Card className="bg-white dark:bg-gray-700 border dark:border-gray-600">
                 <CardContent className="p-6">
                   <h3 className="mb-2 text-lg font-semibold text-gray-800 dark:text-white">
                     How can I get involved in projects?
                   </h3>
                   <p className="text-gray-700 dark:text-gray-300">
-                    We have ongoing research and development projects in areas like robotics, 
-                    AI, and embedded systems. Contact our technical team to learn about current opportunities.
+                    We have ongoing research and development projects in areas
+                    like robotics, AI, and embedded systems. Contact our
+                    technical team to learn about current opportunities.
                   </p>
                 </CardContent>
               </Card>

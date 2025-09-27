@@ -62,7 +62,7 @@ const ImageCarousel = () => {
           interval: 5000,
           speed: 1000,
         }}
-        className="relative [&_.splide__pagination]:bottom-6 [&_.splide__pagination__page]:bg-white [&_.splide__pagination__page.is-active]:bg-blue-400"
+        className="relative [&_.splide__pagination]:bottom-8 [&_.splide__pagination__page]:bg-white/70 [&_.splide__pagination__page]:w-3 [&_.splide__pagination__page]:h-3 [&_.splide__pagination__page]:mx-1 [&_.splide__pagination__page]:rounded-full [&_.splide__pagination__page]:backdrop-blur-sm [&_.splide__pagination__page.is-active]:bg-white [&_.splide__pagination__page.is-active]:scale-125 [&_.splide__pagination]:flex [&_.splide__pagination]:justify-center [&_.splide__pagination]:gap-2 [&_.splide__arrow]:bg-white/20 [&_.splide__arrow]:backdrop-blur-sm [&_.splide__arrow]:border-0 [&_.splide__arrow]:rounded-full [&_.splide__arrow]:w-12 [&_.splide__arrow]:h-12 [&_.splide__arrow:hover]:bg-white/30 [&_.splide__arrow]:transition-all [&_.splide__arrow]:duration-300"
       >
         {slides.map((slide, index) => (
           <SplideSlide key={index}>
@@ -80,24 +80,29 @@ const ImageCarousel = () => {
                   }}
                 />
               )}
-              <div className="absolute inset-0 bg-black/50" />
-              <div className="container relative flex h-full flex-col items-center justify-center text-center text-white px-4">
-                {/* Title */}
-                <h2 className="mb-3 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-wide leading-tight drop-shadow-lg">
-                  {slide.title}
-                </h2>
-                {/* Subtitle */}
-                <p className="mb-6 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-light tracking-wide leading-relaxed drop-shadow-md max-w-4xl">
-                  {slide.subtitle}
-                </p>
-                {/* Button */}
-                <Button
-                  size="lg"
-                  variant="secondary"
-                  className="rounded-full bg-white dark:bg-gray-700 px-6 sm:px-8 text-sm sm:text-base text-[#00629B] dark:text-white hover:bg-blue-50 dark:hover:bg-gray-600 shadow-lg"
-                >
-                  {slide.buttonText}
-                </Button>
+              <div className="absolute inset-0 bg-black/40" />
+              <div className="relative flex h-full items-center justify-center">
+                <div className="mx-auto max-w-6xl px-6 text-center">
+                  {/* Title */}
+                  <h1 className="mb-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-none text-white">
+                    <span className="block drop-shadow-2xl">{slide.title}</span>
+                  </h1>
+
+                  {/* Subtitle */}
+                  <p className="mb-8 text-lg sm:text-xl md:text-2xl lg:text-3xl font-light text-white/95 leading-relaxed drop-shadow-lg max-w-4xl mx-auto">
+                    {slide.subtitle}
+                  </p>
+
+                  {/* Button */}
+                  <div className="flex justify-center">
+                    <Button
+                      size="lg"
+                      className="rounded-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold px-8 py-4 text-lg shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300 border-0"
+                    >
+                      {slide.buttonText}
+                    </Button>
+                  </div>
+                </div>
               </div>
             </div>
           </SplideSlide>
