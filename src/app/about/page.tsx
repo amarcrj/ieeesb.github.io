@@ -1,18 +1,15 @@
-import Header from "@/components/header";
+"use client";
+
 import Footer from "@/components/footer";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, Award, Globe, BookOpen, Target, Lightbulb } from "lucide-react";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "About Us",
-  description: "Learn about IEEE Student Branch IIITNR - Our mission, vision, history, and core values. Discover how we foster technological innovation and professional excellence among students.",
-  openGraph: {
-    title: "About IEEE Student Branch IIITNR",
-    description: "Discover our mission to foster technological innovation and professional excellence among students at IIIT Naya Raipur.",
-  },
-};
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
+import { GridBackground } from "@/components/ui/grid-background";
+import { Meteors } from "@/components/ui/meteors";
+import { LampContainer } from "@/components/ui/lamp-effect";
+import { motion } from "motion/react";
 
 const stats = [
   {
@@ -64,11 +61,38 @@ const values = [
   }
 ];
 
+const testimonials = [
+  {
+    quote: "IEEE Student Branch IIITNR has been instrumental in shaping my technical skills and professional network. The workshops and research opportunities provided have been invaluable to my career growth.",
+    name: "Dr. Priya Sharma",
+    title: "Former Member, Now Software Engineer at Google"
+  },
+  {
+    quote: "The collaborative environment and cutting-edge research projects at IEEE IIITNR opened doors to exciting opportunities in AI and machine learning. It's where I discovered my passion for technology.",
+    name: "Rahul Kumar",
+    title: "Alumni, Data Scientist at Microsoft"
+  },
+  {
+    quote: "Being part of IEEE Student Branch taught me leadership, teamwork, and technical excellence. The mentorship and peer learning experiences are unmatched.",
+    name: "Anisha Patel",
+    title: "Former Chairperson, Now PhD at Stanford"
+  },
+  {
+    quote: "The international conferences and workshops organized by IEEE IIITNR exposed me to global technology trends and connected me with industry leaders.",
+    name: "Vikram Singh",
+    title: "Alumni, Robotics Engineer at Tesla"
+  },
+  {
+    quote: "IEEE Student Branch provided the perfect platform to transform theoretical knowledge into practical solutions. The research culture here is truly inspiring.",
+    name: "Meera Joshi",
+    title: "Former Secretary, Now Tech Lead at Amazon"
+  },
+];
+
 export default function About() {
   return (
     <div className="flex min-h-screen flex-col bg-white dark:bg-gray-900">
-      <Header />
-      <main className="pt-[104px]">
+      <main>
         {/* Hero Section */}
         <section className="bg-gradient-to-r from-[#00629B] to-blue-700 dark:from-gray-800 dark:to-gray-900 py-8 sm:py-12 lg:py-16 text-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -128,40 +152,44 @@ export default function About() {
         </section>
 
         {/* Mission & Vision */}
-        <section className="py-8 sm:py-12 lg:py-16 bg-white dark:bg-gray-900">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <GridBackground className="py-8 sm:py-12 lg:py-16">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
             <div className="grid gap-8 sm:gap-12 lg:grid-cols-2">
-              <div>
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+              >
                 <h2 className="mb-6 text-3xl font-bold text-[#00629B] dark:text-blue-400">Our Mission</h2>
-                <p className="mb-4 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                  To foster technological innovation and professional excellence among 
-                  students at IIIT Naya Raipur. We create a collaborative environment where 
-                  future engineers and technologists can develop their skills, explore 
-                  cutting-edge research, and contribute to society&apos;s advancement.
-                </p>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  Through workshops, competitions, research projects, and industry 
-                  connections, we prepare our members to become leaders in the 
-                  rapidly evolving technology landscape.
-                </p>
-              </div>
-              <div>
+                <TextGenerateEffect
+                  words="To foster technological innovation and professional excellence among students at IIIT Naya Raipur. We create a collaborative environment where future engineers and technologists can develop their skills, explore cutting-edge research, and contribute to society's advancement."
+                  className="mb-4 text-lg text-gray-700 dark:text-gray-300 leading-relaxed"
+                />
+                <TextGenerateEffect
+                  words="Through workshops, competitions, research projects, and industry connections, we prepare our members to become leaders in the rapidly evolving technology landscape."
+                  className="text-gray-700 dark:text-gray-300 leading-relaxed"
+                  duration={0.8}
+                />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+              >
                 <h2 className="mb-6 text-3xl font-bold text-[#00629B] dark:text-blue-400">Our Vision</h2>
-                <p className="mb-4 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                  To be the premier student organization at IIIT Naya Raipur, recognized 
-                  for producing exceptional engineers and innovators who contribute 
-                  significantly to technological advancement and societal development.
-                </p>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  We envision our members as future leaders who will drive 
-                  innovation in artificial intelligence, cybersecurity, embedded 
-                  systems, and emerging technologies, making IIIT Naya Raipur a hub 
-                  of technological excellence.
-                </p>
-              </div>
+                <TextGenerateEffect
+                  words="To be the premier student organization at IIIT Naya Raipur, recognized for producing exceptional engineers and innovators who contribute significantly to technological advancement and societal development."
+                  className="mb-4 text-lg text-gray-700 dark:text-gray-300 leading-relaxed"
+                />
+                <TextGenerateEffect
+                  words="We envision our members as future leaders who will drive innovation in artificial intelligence, cybersecurity, embedded systems, and emerging technologies, making IIIT Naya Raipur a hub of technological excellence."
+                  className="text-gray-700 dark:text-gray-300 leading-relaxed"
+                  duration={0.8}
+                />
+              </motion.div>
             </div>
           </div>
-        </section>
+        </GridBackground>
 
         {/* Core Values */}
         <section className="py-8 sm:py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-800 dark:to-gray-700">
@@ -199,8 +227,9 @@ export default function About() {
         </section>
 
         {/* History Section */}
-        <section className="py-8 sm:py-12 lg:py-16 bg-white dark:bg-gray-900">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative py-8 sm:py-12 lg:py-16 bg-white dark:bg-gray-900 overflow-hidden">
+          <Meteors number={15} />
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="grid gap-6 sm:gap-8 lg:grid-cols-2 items-center">
               <div className="order-2 lg:order-1">
                 <Image
@@ -253,6 +282,50 @@ export default function About() {
               <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#00629B] dark:hover:bg-gray-700 dark:hover:text-white transition-colors">
                 Learn More
               </button>
+            </div>
+          </div>
+        </section>
+
+        {/* Inspiration Section with Lamp Effect */}
+        <LampContainer>
+          <motion.h1
+            initial={{ opacity: 0.5, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.3,
+              duration: 0.8,
+              ease: "easeInOut",
+            }}
+            className="mt-8 bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
+          >
+            Inspiring Tomorrow&apos;s <br /> Technology Leaders
+          </motion.h1>
+        </LampContainer>
+
+        {/* Alumni Testimonials */}
+        <section className="py-8 sm:py-12 lg:py-16 bg-white dark:bg-gray-900">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-12"
+            >
+              <h2 className="mb-4 text-2xl sm:text-3xl font-bold text-[#00629B] dark:text-blue-400">
+                What Our Alumni Say
+              </h2>
+              <p className="mx-auto max-w-2xl text-sm sm:text-base text-gray-700 dark:text-gray-300 px-4 sm:px-0">
+                Hear from our successful alumni who are now making their mark in the tech industry worldwide.
+              </p>
+            </motion.div>
+
+            <div className="flex justify-center">
+              <InfiniteMovingCards
+                items={testimonials}
+                direction="right"
+                speed="slow"
+                className="w-full"
+              />
             </div>
           </div>
         </section>

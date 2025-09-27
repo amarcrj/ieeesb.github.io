@@ -1,4 +1,3 @@
-import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
@@ -248,8 +247,8 @@ const AlumniCard = ({ alumni }: { alumni: Alumni }) => (
 export default function Alumni() {
   return (
     <div className="flex min-h-screen flex-col bg-white dark:bg-gray-900">
-      <Header />
-      <main className="pt-[180px]">
+      
+      <main>
         {/* Hero Section */}
         <section className="bg-gradient-to-r from-[#00629B] to-blue-700 dark:from-gray-800 dark:to-gray-900 py-8 sm:py-12 lg:py-16 text-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">

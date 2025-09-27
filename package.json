@@ -11,9 +11,15 @@
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.1",
     "@splidejs/react-splide": "^0.7.12",
+    "@tsparticles/engine": "^3.9.1",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.9.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "framer-motion": "^12.23.22",
     "lucide-react": "^0.473.0",
+    "mini-svg-data-uri": "^1.4.4",
+    "motion": "^12.23.22",
     "next": "15.1.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -28,6 +34,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.1.5",
     "postcss": "^8",
+    "shadcn": "^3.3.1",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }

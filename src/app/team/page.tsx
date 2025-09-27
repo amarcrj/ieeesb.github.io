@@ -1,13 +1,13 @@
 "use client";
 
-import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Image from "next/image";
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Mail, Linkedin, Github, Filter } from "lucide-react";
+import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card-effect";
+import { SparklesCore } from "@/components/ui/sparkles";
+import { motion } from "motion/react";
 import { useState } from "react";
-import type { Metadata } from "next";
 
 // export const metadata: Metadata = {
 //   title: "Our Team",
@@ -284,60 +284,87 @@ interface TeamMember {
 }
 
 const TeamMemberCard = ({ member }: { member: TeamMember }) => (
-  <Card className="group overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 bg-white dark:bg-gray-700 border dark:border-gray-600">
-    <CardContent className="p-0">
-      <div className="relative">
-        <div className="relative h-[300px] overflow-hidden">
+  <CardContainer containerClassName="py-2">
+    <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[24rem] h-auto rounded-xl p-4 border">
+      {/* Sparkles background */}
+      <div className="absolute inset-0 h-full w-full rounded-xl">
+        <SparklesCore
+          id={`sparkles-${member.name}`}
+          background="transparent"
+          minSize={0.3}
+          maxSize={0.8}
+          particleDensity={15}
+          className="w-full h-full rounded-xl"
+          particleColor="#00629B"
+        />
+      </div>
+
+      <CardItem
+        translateZ="50"
+        className="text-xl font-bold text-neutral-600 dark:text-white relative z-10"
+      >
+        {member.name}
+      </CardItem>
+
+      <CardItem
+        as="p"
+        translateZ="60"
+        className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300 relative z-10"
+      >
+        {member.position}
+      </CardItem>
+
+      <CardItem translateZ="100" className="w-full mt-3 relative z-10">
+        <div className="relative h-[240px] w-full overflow-hidden rounded-xl">
           <Image
             src={member.image}
             alt={member.name}
             fill
-            className="object-cover transition-transform duration-300 group-hover:scale-110"
+            className="object-cover group-hover/card:shadow-xl"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-          <div className="absolute bottom-4 left-4 text-white">
-            <h3 className="text-lg font-bold">{member.name}</h3>
-            <p className="text-sm opacity-90">{member.position}</p>
-          </div>
         </div>
-      </div>
+      </CardItem>
 
-      <div className="p-6">
-        <div className="mb-3 flex items-center justify-between">
-          <div>
-            <p className="text-sm font-medium text-gray-600 dark:text-gray-300">
-              {member.year} • {member.major}
-            </p>
-          </div>
-        </div>
+      <div className="flex flex-col mt-6 relative z-10">
+        <CardItem
+          translateZ={20}
+          className="text-sm font-medium text-gray-600 dark:text-gray-300 mb-2"
+        >
+          {member.year} • {member.major}
+        </CardItem>
 
-        <p className="mb-4 text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+        <CardItem
+          translateZ={20}
+          as="p"
+          className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed mb-4"
+        >
           {member.bio}
-        </p>
+        </CardItem>
 
-        <div className="flex items-center space-x-3">
+        <CardItem translateZ={20} className="flex items-center space-x-3">
           <a
             href={`mailto:${member.email}`}
-            className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-600 text-gray-600 dark:text-gray-300 hover:bg-[#00629B] hover:text-white transition-colors"
+            className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-600 text-gray-600 dark:text-gray-300 hover:bg-[#00629B] hover:text-white transition-colors"
           >
             <Mail className="h-4 w-4" />
           </a>
           <a
             href={member.linkedin}
-            className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-600 text-gray-600 dark:text-gray-300 hover:bg-[#0077be] hover:text-white transition-colors"
+            className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-600 text-gray-600 dark:text-gray-300 hover:bg-[#0077be] hover:text-white transition-colors"
           >
             <Linkedin className="h-4 w-4" />
           </a>
           <a
             href={member.github}
-            className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-600 text-gray-600 dark:text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
+            className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-600 text-gray-600 dark:text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
           >
             <Github className="h-4 w-4" />
           </a>
-        </div>
+        </CardItem>
       </div>
-    </CardContent>
-  </Card>
+    </CardBody>
+  </CardContainer>
 );
 
 export default function Team() {
@@ -345,19 +372,41 @@ export default function Team() {
 
   return (
     <div className="flex min-h-screen flex-col bg-white dark:bg-gray-900">
-      <Header />
-      <main className="pt-[180px]">
+      <main>
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-[#00629B] to-blue-700 dark:from-gray-800 dark:to-gray-900 py-8 sm:py-12 lg:py-16 text-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="mb-4 sm:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
+        <section className="relative bg-gradient-to-r from-[#00629B] to-blue-700 dark:from-gray-800 dark:to-gray-900 py-8 sm:py-12 lg:py-16 text-white overflow-hidden">
+          {/* Sparkles Background */}
+          <div className="absolute inset-0 h-full w-full">
+            <SparklesCore
+              id="team-hero-sparkles"
+              background="transparent"
+              minSize={0.6}
+              maxSize={1.4}
+              particleDensity={50}
+              className="w-full h-full"
+              particleColor="#ffffff"
+            />
+          </div>
+
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="mb-4 sm:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold"
+            >
               Meet Our Team
-            </h1>
-            <p className="mx-auto max-w-2xl text-sm sm:text-base lg:text-lg opacity-90 px-4 sm:px-0">
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="mx-auto max-w-2xl text-sm sm:text-base lg:text-lg opacity-90 px-4 sm:px-0"
+            >
               Our diverse team of passionate engineers and technology
               enthusiasts working together to advance IEEE&apos;s mission on
               campus.
-            </p>
+            </motion.p>
           </div>
         </section>
 
@@ -404,7 +453,7 @@ export default function Team() {
                 </p>
               </div>
 
-              <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="grid gap-8 sm:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {teamMembers.executive.map((member, index) => (
                   <TeamMemberCard key={index} member={member} />
                 ))}

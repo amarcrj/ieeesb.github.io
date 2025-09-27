@@ -55,6 +55,23 @@ export default {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
+  		},
+  		backgroundImage: {
+  			'grid-black': 'url("data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 32 32\' width=\'32\' height=\'32\' fill=\'none\' stroke=\'%23000\'%3e%3cpath d=\'m0 .5 32 0M.5 0l0 32\'/%3e%3c/svg%3e")',
+  			'grid-white': 'url("data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 32 32\' width=\'32\' height=\'32\' fill=\'none\' stroke=\'%23fff\'%3e%3cpath d=\'m0 .5 32 0M.5 0l0 32\'/%3e%3c/svg%3e")',
+  		},
+  		animation: {
+  			aurora: "aurora 60s linear infinite",
+  		},
+  		keyframes: {
+  			aurora: {
+  				"0%, 100%": {
+  					backgroundPosition: "50% 50%, 50% 50%",
+  				},
+  				"50%": {
+  					backgroundPosition: "350% 50%, 350% 50%",
+  				},
+  			},
   		}
   	}
   },
