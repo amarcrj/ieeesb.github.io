@@ -4,11 +4,11 @@ import { motion } from "motion/react";
 import { HeroParallax } from "@/components/ui/hero-parallax";
 // import { AuroraBackground } from "@/components/ui/aurora-background";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
-import {
-  CardContainer,
-  CardBody,
-  CardItem,
-} from "@/components/ui/3d-card-effect";
+// import {
+//   CardContainer,
+//   CardBody,
+//   CardItem,
+// } from "@/components/ui/3d-card-effect";
 // import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -18,10 +18,10 @@ import {
   Train,
   Hotel,
   Utensils,
-  Navigation,
-  Clock,
-  Wifi,
-  Calendar,
+  // Navigation,
+  // Clock,
+  // Wifi,
+  // Calendar,
 } from "lucide-react";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
