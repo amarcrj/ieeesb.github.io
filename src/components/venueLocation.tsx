@@ -2,14 +2,14 @@
 
 import { motion } from "motion/react";
 import { HeroParallax } from "@/components/ui/hero-parallax";
-import { AuroraBackground } from "@/components/ui/aurora-background";
+// import { AuroraBackground } from "@/components/ui/aurora-background";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import {
   CardContainer,
   CardBody,
   CardItem,
 } from "@/components/ui/3d-card-effect";
-import { Badge } from "@/components/ui/badge";
+// import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   MapPin,
@@ -120,91 +120,91 @@ const venueImages = [
   },
 ];
 
-const travelOptions = [
-  {
-    icon: Plane,
-    title: "Airport Access",
-    subtitle: "San Francisco International",
-    details: "25 minutes drive",
-    description: "Direct shuttle service available",
-    color: "from-blue-400 to-blue-600",
-  },
-  {
-    icon: Train,
-    title: "Public Transit",
-    subtitle: "Metro Station",
-    details: "5 minutes walk",
-    description: "Multiple transit lines converge nearby",
-    color: "from-green-400 to-green-600",
-  },
-  {
-    icon: Car,
-    title: "Parking",
-    subtitle: "On-site garage",
-    details: "500 spaces available",
-    description: "Valet and self-parking options",
-    color: "from-purple-400 to-purple-600",
-  },
-  {
-    icon: Hotel,
-    title: "Accommodation",
-    subtitle: "Partner hotels",
-    details: "Special conference rates",
-    description: "10+ partner hotels within 2 miles",
-    color: "from-orange-400 to-orange-600",
-  },
-];
+// const travelOptions = [
+//   {
+//     icon: Plane,
+//     title: "Airport Access",
+//     subtitle: "San Francisco International",
+//     details: "25 minutes drive",
+//     description: "Direct shuttle service available",
+//     color: "from-blue-400 to-blue-600",
+//   },
+//   {
+//     icon: Train,
+//     title: "Public Transit",
+//     subtitle: "Metro Station",
+//     details: "5 minutes walk",
+//     description: "Multiple transit lines converge nearby",
+//     color: "from-green-400 to-green-600",
+//   },
+//   {
+//     icon: Car,
+//     title: "Parking",
+//     subtitle: "On-site garage",
+//     details: "500 spaces available",
+//     description: "Valet and self-parking options",
+//     color: "from-purple-400 to-purple-600",
+//   },
+//   {
+//     icon: Hotel,
+//     title: "Accommodation",
+//     subtitle: "Partner hotels",
+//     details: "Special conference rates",
+//     description: "10+ partner hotels within 2 miles",
+//     color: "from-orange-400 to-orange-600",
+//   },
+// ];
 
-const venueFeatures = [
-  { icon: Calendar, feature: "500+ capacity main auditorium" },
-  { icon: Wifi, feature: "High-speed WiFi throughout" },
-  { icon: Navigation, feature: "Full AV equipment & live streaming" },
-  { icon: MapPin, feature: "Accessible facilities & parking" },
-  { icon: Utensils, feature: "On-site dining & catering" },
-  { icon: Clock, feature: "Extended hours for networking" },
-];
+// const venueFeatures = [
+//   { icon: Calendar, feature: "500+ capacity main auditorium" },
+//   { icon: Wifi, feature: "High-speed WiFi throughout" },
+//   { icon: Navigation, feature: "Full AV equipment & live streaming" },
+//   { icon: MapPin, feature: "Accessible facilities & parking" },
+//   { icon: Utensils, feature: "On-site dining & catering" },
+//   { icon: Clock, feature: "Extended hours for networking" },
+// ];
 
 const headerText =
   "Join us at a world-class conference venue in the heart of Silicon Valley's vibrant tech ecosystem, perfectly designed for innovation, networking, and collaboration.";
 
-const TravelCard = ({ option, index }: { option: any; index: number }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6, delay: index * 0.1 }}
-    className="group"
-  >
-    <CardContainer className="inter-var">
-      <CardBody className="bg-gray-50 dark:bg-black/20 relative group/card dark:hover:shadow-2xl dark:hover:shadow-blue-500/[0.1] border-gray-200 dark:border-white/[0.2] w-full h-auto rounded-xl p-6 border backdrop-blur-sm">
-        <CardItem translateZ="50" className="text-center">
-          <div
-            className={`inline-flex p-4 rounded-full bg-gradient-to-r ${option.color} shadow-lg mb-4`}
-          >
-            <option.icon className="h-8 w-8 text-white" />
-          </div>
-        </CardItem>
+// const TravelCard = ({ option, index }: { option: any; index: number }) => (
+//   <motion.div
+//     initial={{ opacity: 0, y: 30 }}
+//     whileInView={{ opacity: 1, y: 0 }}
+//     transition={{ duration: 0.6, delay: index * 0.1 }}
+//     className="group"
+//   >
+//     <CardContainer className="inter-var">
+//       <CardBody className="bg-gray-50 dark:bg-black/20 relative group/card dark:hover:shadow-2xl dark:hover:shadow-blue-500/[0.1] border-gray-200 dark:border-white/[0.2] w-full h-auto rounded-xl p-6 border backdrop-blur-sm">
+//         <CardItem translateZ="50" className="text-center">
+//           <div
+//             className={`inline-flex p-4 rounded-full bg-gradient-to-r ${option.color} shadow-lg mb-4`}
+//           >
+//             <option.icon className="h-8 w-8 text-white" />
+//           </div>
+//         </CardItem>
 
-        <CardItem translateZ="60" className="text-center mb-4">
-          <h3 className="text-xl font-bold text-[#00629B] dark:text-blue-400 mb-2">
-            {option.title}
-          </h3>
-          <p className="text-lg font-semibold text-gray-800 dark:text-white mb-1">
-            {option.subtitle}
-          </p>
-          <p className="text-sm text-gray-600 dark:text-gray-300">
-            {option.details}
-          </p>
-        </CardItem>
+//         <CardItem translateZ="60" className="text-center mb-4">
+//           <h3 className="text-xl font-bold text-[#00629B] dark:text-blue-400 mb-2">
+//             {option.title}
+//           </h3>
+//           <p className="text-lg font-semibold text-gray-800 dark:text-white mb-1">
+//             {option.subtitle}
+//           </p>
+//           <p className="text-sm text-gray-600 dark:text-gray-300">
+//             {option.details}
+//           </p>
+//         </CardItem>
 
-        <CardItem translateZ="70" className="text-center">
-          <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
-            {option.description}
-          </p>
-        </CardItem>
-      </CardBody>
-    </CardContainer>
-  </motion.div>
-);
+//         <CardItem translateZ="70" className="text-center">
+//           <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+//             {option.description}
+//           </p>
+//         </CardItem>
+//       </CardBody>
+//     </CardContainer>
+//   </motion.div>
+// );
 
 // Custom Header for Hero Parallax
 const VenueHeader = () => (
