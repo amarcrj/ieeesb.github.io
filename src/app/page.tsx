@@ -5,14 +5,13 @@ import Footer from "@/components/footer";
 import { EnhancedHero, TechShowcase } from "@/components/enhancedHero";
 import AboutSection from "@/components/aboutSection";
 import KeynoteSpeakers from "@/components/keynoteSpeakers";
-import ImportantDates from "@/components/importantDates";
 import VenueLocation from "@/components/venueLocation";
 import { isUsedElsewhere } from "@/lib/componentUsageTracker";
 
 // Component mapping for dynamic filtering
 const availableComponents = {
   AboutSection,
-  ImportantDates,
+  // ImportantDates,
   // CallForPapers,
   KeynoteSpeakers,
   // ProgramSchedule,

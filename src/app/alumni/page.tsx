@@ -1,3 +1,5 @@
+"use client";
+
 import Footer from "@/components/footer";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
@@ -12,18 +14,6 @@ import {
   Award,
   Mail,
 } from "lucide-react";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Alumni Network",
-  description:
-    "Connect with IEEE Student Branch IIITNR alumni making impacts across the technology industry. Explore our alumni network, achievements, and career opportunities.",
-  openGraph: {
-    title: "IEEE Student Branch IIITNR Alumni Network",
-    description:
-      "Our graduates are making significant impacts across the technology industry, from leading research at top companies to founding innovative startups.",
-  },
-};
 
 const featuredAlumni = [
   {
@@ -251,7 +241,7 @@ export default function Alumni() {
       
       <main>
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-r from-[#00629B] to-blue-700 dark:from-gray-800 dark:to-gray-900 py-8 sm:py-12 lg:py-16 text-white overflow-hidden">
+        <section className="relative bg-gradient-to-r from-[#00629B] to-blue-700 dark:from-gray-800 dark:to-gray-900 py-12 sm:py-16 lg:py-20 text-white overflow-hidden min-h-[40vh] flex items-center">
           <SparklesCore
             id="alumni-hero-sparkles"
             background="transparent"

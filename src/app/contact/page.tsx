@@ -80,9 +80,9 @@ export default function Contact() {
   return (
     <div className="flex min-h-screen flex-col bg-white dark:bg-gray-900">
       
-      <main className="pt-20">
+      <main>
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-r from-[#00629B] to-blue-700 dark:from-gray-800 dark:to-gray-900 py-8 sm:py-12 lg:py-16 text-white overflow-hidden">
+        <section className="relative bg-gradient-to-r from-[#00629B] to-blue-700 dark:from-gray-800 dark:to-gray-900 py-12 sm:py-16 lg:py-20 text-white overflow-hidden min-h-[40vh] flex items-center">
           <SparklesCore
             id="contact-hero-sparkles"
             background="transparent"

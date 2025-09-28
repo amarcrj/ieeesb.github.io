@@ -59,9 +59,12 @@ export default {
   		backgroundImage: {
   			'grid-black': 'url("data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 32 32\' width=\'32\' height=\'32\' fill=\'none\' stroke=\'%23000\'%3e%3cpath d=\'m0 .5 32 0M.5 0l0 32\'/%3e%3c/svg%3e")',
   			'grid-white': 'url("data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 32 32\' width=\'32\' height=\'32\' fill=\'none\' stroke=\'%23fff\'%3e%3cpath d=\'m0 .5 32 0M.5 0l0 32\'/%3e%3c/svg%3e")',
+  			'grid-gray-100': 'url("data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 32 32\' width=\'32\' height=\'32\' fill=\'none\' stroke=\'%23f3f4f6\'%3e%3cpath d=\'m0 .5 32 0M.5 0l0 32\'/%3e%3c/svg%3e")',
+  			'grid-gray-800': 'url("data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 32 32\' width=\'32\' height=\'32\' fill=\'none\' stroke=\'%231f2937\'%3e%3cpath d=\'m0 .5 32 0M.5 0l0 32\'/%3e%3c/svg%3e")',
   		},
   		animation: {
   			aurora: "aurora 60s linear infinite",
+  			scroll: "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
   		},
   		keyframes: {
   			aurora: {
@@ -70,6 +73,11 @@ export default {
   				},
   				"50%": {
   					backgroundPosition: "350% 50%, 350% 50%",
+  				},
+  			},
+  			scroll: {
+  				to: {
+  					transform: "translate(calc(-50% - 0.5rem))",
   				},
   			},
   		}
