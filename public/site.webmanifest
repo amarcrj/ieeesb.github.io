@@ -2,12 +2,12 @@
   "name": "IEEE Student Branch IIITNR",
   "short_name": "IEEE IIITNR",
   "description": "IEEE Student Branch at International Institute of Information Technology, Naya Raipur",
-  "start_url": "/",
+  "start_url": "/ieeesb.github.io/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#00629B",
   "orientation": "portrait-primary",
-  "scope": "/",
+  "scope": "/ieeesb.github.io/",
   "icons": [
     {
       "src": "/1000119890.png",

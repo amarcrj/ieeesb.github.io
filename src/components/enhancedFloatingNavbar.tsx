@@ -22,6 +22,7 @@ import {
   Trophy,
 } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
+import logo from "../assets/images/1000119891.png";
 
 const navItems = [
   {
@@ -107,7 +108,7 @@ export const EnhancedFloatingNavbar = () => {
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2">
               <Image
-                src="/1000119891.png"
+                src={logo}
                 alt="IEEE Student Branch IIITNR"
                 width={420}
                 height={160}

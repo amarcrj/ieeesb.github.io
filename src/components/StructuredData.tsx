@@ -4,9 +4,9 @@ export default function StructuredData() {
     "@type": "EducationalOrganization",
     "name": "IEEE Student Branch IIITNR",
     "alternateName": "IEEE Student Branch at International Institute of Information Technology, Naya Raipur",
-    "url": "https://ieee-iiitnr.edu.in",
-    "logo": "https://ieee-iiitnr.edu.in/1000119890.png",
-    "image": "https://ieee-iiitnr.edu.in/1000119890.png",
+    "url": "https://amarsinha.in/ieeesb.github.io",
+    "logo": "https://amarsinha.in/ieeesb.github.io/1000119890.png",
+    "image": "https://amarsinha.in/ieeesb.github.io/1000119890.png",
     "description": "IEEE Student Branch at International Institute of Information Technology, Naya Raipur - Fostering technological innovation and professional development among students in electrical engineering, computer science, and related fields.",
     "address": {
       "@type": "PostalAddress",

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import footerLogo from "../assets/images/1000119891.png";
 
 const footerLinks = [
   "HOME",
@@ -21,7 +22,7 @@ const Footer = () => {
         <div className="mb-8 text-center">
           <div className="flex justify-center items-center space-x-4 mb-4">
             <Image
-              src="/1000119891.png"
+              src={footerLogo}
               alt="IEEE Student Branch IIITNR"
               width={200}
               height={50}

@@ -7,6 +7,7 @@ import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import { useScrollDirection } from "@/hooks/useScrollDirection";
 import ThemeToggle from "@/components/ThemeToggle";
+import logoImage from "../assets/images/1000119889.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -122,7 +123,7 @@ const Header = () => {
           <Image
             width={420}
             height={120}
-            src="/1000119889.png"
+            src={logoImage}
             alt="IEEE Student Branch IIITNR Logo"
             className="h-20 w-auto object-contain"
             priority
