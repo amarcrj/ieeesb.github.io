@@ -11,7 +11,10 @@
       "Bash(git remote set-url:*)",
       "Bash(git checkout:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:ieeesb.iiitnr.ac.in)"
     ],
     "deny": [],
     "ask": []
