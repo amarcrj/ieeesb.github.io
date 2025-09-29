@@ -31,14 +31,14 @@ jobs:
     - name: Install dependencies
       run: npm ci
 
-    - name: Export Next.js app
-      run: npm run export
+    - name: Build Next.js app (static export)
+      run: npm run build
 
     - name: Create .nojekyll file
       run: touch out/.nojekyll
 
     - name: Copy CNAME file
-      run: cp public/CNAME out/ || echo "No CNAME file found"
+      run: cp CNAME out/ || echo "No CNAME file found"
 
     - name: Setup Pages
       uses: actions/configure-pages@v4
