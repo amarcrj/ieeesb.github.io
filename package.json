@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next build",
-    "deploy": "npm run export && touch out/.nojekyll"
+    "export": "next build && next export",
+    "deploy": "npm run export && touch out/.nojekyll && cp CNAME out/ || true"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.1",
